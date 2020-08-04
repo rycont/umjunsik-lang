@@ -92,7 +92,7 @@
 
 # 예제
 
-[구구단](./gugudan.umm)
+[위키를 참조해주세요](./wiki)
 
 # History
 
