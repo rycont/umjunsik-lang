@@ -13,7 +13,7 @@ export const run = async (content: string) => {
   let pointer = 0;
   const numberify = async (a: string): Promise<number> => {
     let numbered = 0;
-    if(a.includes(' ')) return await numberify(a.split(' ')[0]) * await numberify(a.split(' ')[1])
+    if(a.includes(' ')) return (await Promise.all(a.split(' ').map(numberify))).reduce((a, b) => a * b)
     if(a.includes('식?')) {
       for await (const line of readLines(Deno.stdin)) {
         a = a.replace('식?', '.'.repeat(Number(line)))
@@ -46,7 +46,7 @@ export const run = async (content: string) => {
       await Deno.stdout.write(encoder.encode(String(await numberify(operation.slice(1, -1)))))
     }
     if (operation.includes('식') && operation[operation.length - 1] === 'ㅋ') {
-      if(operation === '식ㅋ') console.log()
+      if (operation === '식ㅋ') console.log()
       await Deno.stdout.write(encoder.encode(stringify(await numberify(operation.slice(1, -1)))))
     }
     if(operation.includes('준')) {
