@@ -1,3 +1,4 @@
+![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
 # 엄랭
 
 **주의: 이미 Umlang이라는 프로젝트가 있기때문에, 꼭 한글로만 표기해주세요.**
