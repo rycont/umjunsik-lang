@@ -92,7 +92,7 @@
 
 # 예제
 
-[위키를 참조해주세요](./wiki)
+[위키를 참조해주세요](https://github.com/rycont/umjunsik-lang/wiki)
 
 # History
 
