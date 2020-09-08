@@ -1,3 +1,5 @@
+> 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
+
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
 # 엄랭
 
