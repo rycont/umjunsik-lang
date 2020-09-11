@@ -109,6 +109,11 @@
 
 [위키를 참조해주세요](https://github.com/rycont/umjunsik-lang/wiki)
 
+# To-Do
+- [ ] 엄랭파이썬
+- [ ] 엄랭아희
+- [ ] gnex-umjunsik [What is Gnex?](https://github.com/rycont/Gnex)
+
 # History
 
 - 20200626 0030 : 엄랭 공개
