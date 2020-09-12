@@ -1,3 +1,7 @@
+> 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
+
+![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
+
 # 엄랭
 
 **주의: 이미 Umlang이라는 프로젝트가 있기때문에, 꼭 한글로만 표기해주세요.**
@@ -105,6 +109,12 @@
 # 예제
 
 [위키를 참조해주세요](https://github.com/rycont/umjunsik-lang/wiki)
+
+# To-Do
+
+- [ ] 엄랭파이썬
+- [ ] 엄랭아희
+- [ ] gnex-umjunsik [What is Gnex?](https://github.com/rycont/Gnex)
 
 # History
 
