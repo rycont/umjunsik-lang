@@ -12,6 +12,20 @@
 
 엄랭은 세계 최초의 인물이름으로 만들어진 난해한 프로그래밍 언어입니다. 엄준식이 어떻게 인물 이름이냐고요? 그러게요ㅋㅋ 어떻게 엄준식이 어떻게 사람 이름이지ㅋㅋ "엄준식 사람이름인데요"
 
+# Contributors ✨
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/cstria0106"><img src="https://avatars1.githubusercontent.com/u/11474150?v=4" width="100px;" alt=""/><br /><sub><b>goorm</b></sub></a><br /><a href="#platform-cstria0106" title="Packaging/porting to new platform">📦</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 # 문법
 
 엄랭은 "엄", "준", "식", "동탄" 네개의 키워드와 "!", ".", " ", "~", "ㅋ" 다섯개의 기호로 코드가 이루어집니다.
@@ -136,22 +150,3 @@
   1. 지시문들을 별도의 단락으로 분리
 - 20200912 : [WIP] 99병의 맥주 예제 작업중
 - 20200915 : 엄랭v2-엄랭노드 구현체 배포
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/cstria0106"><img src="https://avatars1.githubusercontent.com/u/11474150?v=4" width="100px;" alt=""/><br /><sub><b>goorm</b></sub></a><br /><a href="#platform-cstria0106" title="Packaging/porting to new platform">📦</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
