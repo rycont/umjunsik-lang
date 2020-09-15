@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "cstria0106",
+      "name": "goorm",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/11474150?v=4",
+      "profile": "https://github.com/cstria0106",
+      "contributions": [
+        "platform"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "umjunsik-lang",
+  "projectOwner": "rycont",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
