@@ -22,6 +22,15 @@
       "contributions": [
         "platform"
       ]
+    },
+    {
+      "login": "pmh-only",
+      "name": "PMH",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/39158228?v=4",
+      "profile": "https://trinets.xyz",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
