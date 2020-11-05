@@ -125,15 +125,21 @@
 - 확장자는 `.umm`입니다.
 - One-line 작성은 `\n`을 `~`로 치환합니다. (예제: 구구단 참조)
 
+# 구현체
+- [Deno](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 가장 처음 만들어진 런타임입니다. Deno 1.4.6, Ubuntu 18.04 on WSL 에서 테스트되었습니다.
+- [노드JS](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
+- [파이썬](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
+- [웹-엄](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : PMH님이 [호스팅해주시고 있습니다🎉](https://static.pmh.codes/umjunsik-lang/umjunsik-lang-web/)
+
 # 예제
 
 [위키를 참조해주세요](https://github.com/rycont/umjunsik-lang/wiki)
 
 # To-Do
-- [ ] 웹-엄
-- [ ] 엄랭파이썬
 - [ ] 엄랭아희
 - [ ] gnex-umjunsik [What is Gnex?](https://github.com/rycont/Gnex)
+- [x] ~~웹-엄~~
+- [x] ~~엄랭파이썬~~
 
 # History
 
@@ -152,3 +158,5 @@
   1. 지시문들을 별도의 단락으로 분리
 - 20200912 : [WIP] 99병의 맥주 예제 작업중
 - 20200915 : 엄랭v2-엄랭노드 구현체 배포
+- 20201017 : 엄랭v2-파이썬 구현체 배포 by [Steve28](https://github.com/pl-Steve28-lq)
+- 20201105 : 웹-엄: 자바스크립트로 된 엄랭 처리기(웹런타임) 배포 by [PMH](https://github.com/pmh-only)
