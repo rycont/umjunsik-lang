@@ -23,20 +23,20 @@ class Umjunsik:
         if TYPE == 'DEF':
             var, cmd = code.split('엄')
             self.data[var.count('어')] = self.toNumber(cmd)
-        if TYPE == 'END':
+        elif TYPE == 'END':
             print(self.toNumber(code.split('화이팅!')[1]), end='')
             sys.exit()
-        if TYPE == 'INPUT':
+        elif TYPE == 'INPUT':
             self.data[code.replace('식?', '').count('어')] = int(input())
-        if TYPE == 'PRINT':
+        elif TYPE == 'PRINT':
             print(self.toNumber(code[1:-1]), end='')
-        if TYPE == 'PRINTASCII':
+        elif TYPE == 'PRINTASCII':
             value = self.toNumber(code[1:-1])
             print(chr(value) if value else '\n', end='')
-        if TYPE == 'IF':
+        elif TYPE == 'IF':
             cond, cmd = code.replace('동탄', '').split('?')
             if self.toNumber(cond) == 0: return cmd
-        if TYPE == 'MOVE':
+        elif TYPE == 'MOVE':
             return self.toNumber(code.replace('준', ''))
 
     def compile(self, code, check=True, errors=100000):
