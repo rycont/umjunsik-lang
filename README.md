@@ -21,6 +21,7 @@
     <td align="center"><a href="https://github.com/cstria0106"><img src="https://avatars1.githubusercontent.com/u/11474150?v=4" width="100px;" alt=""/><br /><sub><b>goorm</b></sub></a><br /><a href="#platform-cstria0106" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://github.com/pl-Steve28-lq"><img src="https://avatars2.githubusercontent.com/u/64412954?v=4" width="100px;" alt=""/><br /><sub><b>Steve28</b></sub></a><br /><a href="#platform-pl-Steve28-lq" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://trinets.xyz"><img src="https://avatars2.githubusercontent.com/u/39158228?v=4" width="100px;" alt=""/><br /><sub><b>PMH</b></sub></a><br /><a href="#platform-pmh-only" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/AkiaCode"><img src="https://avatars1.githubusercontent.com/u/71239005?s=460&u=d6a25fccc581d5bc721891c288c442aab7efb8c1&v=4" width="100px;" alt=""/><br /><sub><b>PMH</b></sub></a><br /><a href="#platform-akiacode" title="The error was output to the console as an error class">📦</a></td>
   </tr>
 </table>
 
@@ -126,7 +127,7 @@
 - One-line 작성은 `\n`을 `~`로 치환합니다. (예제: 구구단 참조)
 
 # 구현체
-- [Deno](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 가장 처음 만들어진 런타임입니다. Deno 1.4.6, Ubuntu 18.04 on WSL 에서 테스트되었습니다.
+- [디노](ttps://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 가장 처음 만들어진 런타임입니다. Deno 1.4.6, Ubuntu 18.04 on WSL 에서 테스트되었습니다.
 - [노드JS](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
 - [파이썬](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
 - [웹-엄](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : PMH님이 [호스팅해주시고 있습니다🎉](https://static.pmh.codes/umjunsik-lang/umjunsik-lang-web/)
