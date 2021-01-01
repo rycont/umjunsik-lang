@@ -127,7 +127,7 @@
 - One-line 작성은 `\n`을 `~`로 치환합니다. (예제: 구구단 참조)
 
 # 구현체
-- [디노](ttps://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 가장 처음 만들어진 런타임입니다. Deno 1.4.6, Ubuntu 18.04 on WSL 에서 테스트되었습니다.
+- [디노](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 가장 처음 만들어진 런타임입니다. Deno 1.4.6, Ubuntu 18.04 on WSL 에서 테스트되었습니다.
 - [노드JS](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
 - [파이썬](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
 - [웹-엄](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : PMH님이 [호스팅해주시고 있습니다🎉](https://static.pmh.codes/umjunsik-lang/umjunsik-lang-web/)
