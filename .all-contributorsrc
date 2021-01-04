@@ -31,6 +31,15 @@
       "contributions": [
         "platform"
       ]
+    },
+    {
+      "login": "AkiaCode",
+      "name": "Aki",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/71239005?v=4",
+      "profile": "https://github.com/AkiaCode",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
