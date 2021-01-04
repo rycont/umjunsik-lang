@@ -6,8 +6,7 @@ export const run = async (content: string) => {
   if (
     !(proceed[0] === "어떻게" && proceed.slice(-1)[0] === "이 사람이름이냐!")
   ) {
-    console.log("Error: 어떻게 이 코드가 엄랭이냐ㅋㅋ");
-    return;
+    new Error("어떻게 이 코드가 엄랭이냐ㅋㅋ");
   }
   const variables: number[] = [];
   if (content.includes("~")) proceed = content.split("~");
@@ -81,7 +80,7 @@ const bootstrap = async (filepath: string) => {
   try {
     if (await Deno.stat(filepath)) run(await Deno.readTextFile(filepath));
   } catch (e) {
-    console.log(`Error: ${filepath}가 어떻게 파일이름이냐ㅋㅋ`);
+    new Error(`${filepath}가 어떻게 파일이름이냐ㅋㅋ`);
   }
 };
 
