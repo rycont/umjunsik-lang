@@ -1,6 +1,6 @@
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
@@ -18,15 +18,16 @@
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/cstria0106"><img src="https://avatars1.githubusercontent.com/u/11474150?v=4" width="100px;" alt=""/><br /><sub><b>goorm</b></sub></a><br /><a href="#platform-cstria0106" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://github.com/pl-Steve28-lq"><img src="https://avatars2.githubusercontent.com/u/64412954?v=4" width="100px;" alt=""/><br /><sub><b>Steve28</b></sub></a><br /><a href="#platform-pl-Steve28-lq" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://trinets.xyz"><img src="https://avatars2.githubusercontent.com/u/39158228?v=4" width="100px;" alt=""/><br /><sub><b>PMH</b></sub></a><br /><a href="#platform-pmh-only" title="Packaging/porting to new platform">📦</a></td>
-    <td align="center"><a href="https://github.com/AkiaCode"><img src="https://avatars1.githubusercontent.com/u/71239005?s=460&u=d6a25fccc581d5bc721891c288c442aab7efb8c1&v=4" width="100px;" alt=""/><br /><sub><b>PMH</b></sub></a><br /><a href="#platform-akiacode" title="The error was output to the console as an error class">📦</a></td>
+    <td align="center"><a href="https://github.com/cstria0106"><img src="https://avatars1.githubusercontent.com/u/11474150?v=4?s=100" width="100px;" alt=""/><br /><sub><b>goorm</b></sub></a><br /><a href="#platform-cstria0106" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/pl-Steve28-lq"><img src="https://avatars2.githubusercontent.com/u/64412954?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steve28</b></sub></a><br /><a href="#platform-pl-Steve28-lq" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://trinets.xyz"><img src="https://avatars2.githubusercontent.com/u/39158228?v=4?s=100" width="100px;" alt=""/><br /><sub><b>PMH</b></sub></a><br /><a href="#platform-pmh-only" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/AkiaCode"><img src="https://avatars0.githubusercontent.com/u/71239005?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aki</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=AkiaCode" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 # 문법
