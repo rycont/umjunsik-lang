@@ -43,8 +43,9 @@ class Umjunsik:
         jun = False
         recode = ''
         spliter = '\n' if '\n' in code else '~'
+        code_ori = code
         code = code.strip().split(spliter)
-        if check and (code[0].replace(" ","") != '어떻게' or code[-1] != '이 사람이름이냐!' or not '어떻게' in code[0]) :
+        if check and (code[0].replace(" ","") != '어떻게' or code[-1] != '이 사람이름이냐!' or not code_ori.startswith('어떻게') ) :
             raise SyntaxError('어떻게 이게 엄랭이냐!')
         index = 0
         error = 0
