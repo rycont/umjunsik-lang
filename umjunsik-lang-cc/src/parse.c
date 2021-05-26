@@ -148,7 +148,7 @@ int parse(char *text, FILE *output) {
     "int main() {\n"
     "    atexit(term);\n"
     "j1:\n");
-    for(i=1; strcmp(lines[i], "이 사람이름이냐ㅋㅋ"); i++) {
+    for(i=1; !strstt(lines[i], "이 사람이름이냐"); i++) {
 #ifdef _WIN32
         fprintf(output, "j%d:\n", i+1);
 #else
