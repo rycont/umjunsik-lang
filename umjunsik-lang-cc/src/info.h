@@ -4,11 +4,12 @@
 #define HELP_S \
 "Usage: ummc [options] file...\n" \
 "Options:\n" \
-"  -h        Display this helpful text :)\n" \
-"  -v        Display compiler information.\n" \
-"  -o <file> Place the output into <file>.\n" \
+"  -h | --help       Display this helpful text :)\n" \
+"  -v | --version    Display compiler information.\n" \
+"  -o <file>         Place the output into <file>.\n" \
+"  -save-temps       Do not delete intermediate files.\n" \
 "\n" \
-"For bug reporting, contact\n" \
+"For bug report, please contact\n" \
 "<yangeh2225@gmail.com>.\n"
 #define VERSION_S \
 "ummc 1.0\n" \

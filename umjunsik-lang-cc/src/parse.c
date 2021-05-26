@@ -120,7 +120,7 @@ int parse(char *text, FILE *output) {
     size_t nc;
     size_t i;
     for(nc=0; lines[nc+1]; nc++);
-    if(strcmp(lines[0], "어떻게") || strstt(lines[nc-1], "이 사람이름이냐")) {
+    if(strcmp(lines[0], "어떻게") || !strstt(lines[nc-1], "이 사람이름이냐")) {
         return 1;
     }
     fprintf(output,
@@ -128,7 +128,11 @@ int parse(char *text, FILE *output) {
     "#include<stdlib.h>\n"
     "#define JUN(n) switch(n) { \\\n");
     for(i=1; i<nc; i++) {
+#ifdef _WIN32
+        fprintf(output, "case %u: goto j%u; break; \\\n", i, i);
+#else
         fprintf(output, "case %ld: goto j%ld; break; \\\n", i, i);
+#endif
     }
     fprintf(output,
     "}\n"
@@ -145,7 +149,11 @@ int parse(char *text, FILE *output) {
     "    atexit(term);\n"
     "j1:\n");
     for(i=1; strcmp(lines[i], "이 사람이름이냐ㅋㅋ"); i++) {
+#ifdef _WIN32
+        fprintf(output, "j%d:\n", i+1);
+#else
         fprintf(output, "j%ld:\n", i+1);
+#endif
         operation(lines[i], output);
         fprintf(output, "\n");
     }
