@@ -4,6 +4,7 @@
 #include "info.h"
 #include "parse.h"
 #include "string.h"
+#include "file.h"
 
 int main(int argc, char *argv[]) {
     FILE *input = NULL;
@@ -13,17 +14,25 @@ int main(int argc, char *argv[]) {
     char temp_path[4096] = {0};
     char output_path[4096] = {0};
     char command[8500] = {0};
+    char cflags[100] = {' ', 0};
     int i;
     for(i=1; i<argc; i++) {
         if(argv[i][0]=='-') {
             if(strcmp(argv[i], "-h")==0 || strcmp(argv[i], "--help")==0) {
-                mode |= HELP_M;
+                fprintf(stdout, HELP_S);
+                exit(0);
             } else if(strcmp(argv[i], "-v")==0 || strcmp(argv[i], "--version")==0) {
-                mode |= VERSION_M;
+                fprintf(stdout, VERSION_S);
+                exit(0);
             } else if(strcmp(argv[i], "-o")==0 && i + 1 < argc) {
                 strcpy(output_path, argv[++i]);
-            } else if(strcmp(argv[i], "-save-temps")==0) {
-                mode |= TEMP_M;
+                strcat(cflags, "-o ");
+                strcat(cflags, argv[i]);
+                strcat(cflags, " ");
+            } else if(strcmp(argv[i], "-c")==0) {
+                mode |= SRC;
+            } else if(strcmp(argv[i], "-s")==0) {
+                strcat(cflags, "-S ");
             } else {
                 fprintf(stderr, "어떻게 이게 옵션이냐ㅋㅋ\n");
                 exit(1);
@@ -31,14 +40,6 @@ int main(int argc, char *argv[]) {
         } else {
             strcpy(input_path, argv[i]);
         }
-    }
-    if(mode & HELP_M) {
-        fprintf(stdout, HELP_S);
-        exit(0);
-    }
-    if(mode & VERSION_M) {
-        fprintf(stdout, VERSION_S);
-        exit(0);
     }
     if(input_path[0] == 0) {
         fprintf(stderr, "어떻게 파일 이름이 없냐ㅋㅋ\n");
@@ -73,24 +74,14 @@ int main(int argc, char *argv[]) {
     }
     free(text);
     fclose(temp);
-    if(output_path[0]) {
-        if(mode & TEMP_M) {
-            sprintf(command, "gcc -save-temps \"%s\" -o \"%s\"", temp_path, output_path);
-            system(command);
-        } else {
-            sprintf(command, "gcc \"%s\" -o \"%s\"", temp_path, output_path);
-            system(command);
-            remove(temp_path);
+    if(mode & SRC) {
+        if(output_path[0]) {
+            moveFile(temp_path, output_path);
         }
     } else {
-        if(mode & TEMP_M) {
-            sprintf(command, "gcc -save-temps \"%s\"", temp_path);
-            system(command);
-        } else {
-            sprintf(command, "gcc \"%s\"", temp_path);
-            system(command);
-            remove(temp_path);
-        }
+        sprintf(command, "gcc%s\"%s\"", cflags, temp_path);
+        system(command);
+        remove(temp_path);
     }
     return 0;
 }
