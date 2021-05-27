@@ -120,7 +120,7 @@ int parse(char *text, FILE *output) {
     size_t nc;
     size_t i;
     for(nc=0; lines[nc+1]; nc++);
-    if(strcmp(lines[0], "어떻게") || !strstt(lines[nc-1], "이 사람이름이냐")) {
+    if(strcmp(lines[0], "어떻게") || strcmp(lines[nc-1], "이 사람이름이냐")) {
         freeLines(lines);
         return 1;
     }
@@ -136,7 +136,7 @@ int parse(char *text, FILE *output) {
 #endif
     }
     fprintf(output, "}\nint var[65536];void term(){printf(\"\\n\");}int input(){int a;scanf(\"%%d\",&a);return a;}int main(){atexit(term);_1:");
-    for(i=1; !strstt(lines[i], "이 사람이름이냐"); i++) {
+    for(i=1; strcmp(lines[i], "이 사람이름이냐ㅋㅋ"); i++) {
 #ifdef _WIN32
         fprintf(output, "_%d:", i+1);
 #else
