@@ -58,6 +58,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Rokr0k",
+      "name": "Rok",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35794170?v=4",
+      "profile": "http://rokr0k.tk",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
