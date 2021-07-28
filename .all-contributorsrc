@@ -67,6 +67,16 @@
       "contributions": [
         "platform"
       ]
+    },
+    {
+      "login": "adp-study",
+      "name": "adp-study",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59760424?v=4",
+      "profile": "https://github.com/adp-study",
+      "contributions": [
+        "infra",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
