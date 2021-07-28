@@ -120,7 +120,7 @@ int parse(char *text, FILE *output) {
     size_t nc;
     size_t i;
     for(nc=0; lines[nc+1]; nc++);
-    if(strcmp(lines[0], "어떻게") || strcmp(lines[nc-1], "이 사람이름이냐")) {
+    if(strcmp(lines[0], "어떻게") || strcmp(lines[nc-1], "이 사람이름이냐ㅋㅋ")) {
         freeLines(lines);
         return 1;
     }
