@@ -1,0 +1,15 @@
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\umjunsik-lang-csharp.exe
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\umjunsik-lang-csharp.deps.json
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\umjunsik-lang-csharp.runtimeconfig.json
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\umjunsik-lang-csharp.dll
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\ref\umjunsik-lang-csharp.dll
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\bin\Debug\net6.0\umjunsik-lang-csharp.pdb
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.csproj.AssemblyReference.cache
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.AssemblyInfoInputs.cache
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.AssemblyInfo.cs
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.csproj.CoreCompileInputs.cache
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.dll
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\ref\umjunsik-lang-csharp.dll
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.pdb
+D:\noname\Projects\GitHub\umjunsik-lang\umjunsik-lang-csharp\obj\Debug\net6.0\umjunsik-lang-csharp.genruntimeconfig.cache
