@@ -77,6 +77,15 @@
         "infra",
         "bug"
       ]
+    },
+    {
+      "login": "noname0310",
+      "name": "noname",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48761044?v=4",
+      "profile": "https://www.youtube.com/c/noname0310",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
