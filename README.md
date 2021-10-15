@@ -1,6 +1,6 @@
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
@@ -29,6 +29,7 @@
   <tr>
     <td align="center"><a href="https://github.com/adp-study"><img src="https://avatars.githubusercontent.com/u/59760424?v=4?s=100" width="100px;" alt=""/><br /><sub><b>adp-study</b></sub></a><br /><a href="#infra-adp-study" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/rycont/umjunsik-lang/issues?q=author%3Aadp-study" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.youtube.com/c/noname0310"><img src="https://avatars.githubusercontent.com/u/48761044?v=4?s=100" width="100px;" alt=""/><br /><sub><b>noname</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=noname0310" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/TralocDheckoa"><img src="https://avatars.githubusercontent.com/u/42158095?v=4?s=100" width="100px;" alt=""/><br /><sub><b>TralocDheckoa</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=TralocDheckoa" title="Code">💻</a></td>
   </tr>
 </table>
 
