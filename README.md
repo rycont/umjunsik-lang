@@ -143,7 +143,7 @@
 - [웹-엄](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : PMH님이 [호스팅해주시고 있습니다🎉](https://static.pmh.codes/umjunsik-lang/umjunsik-lang-web/)
 - [C](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C#](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
-- [Kotlin](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-kotlin)
+- [코틀린](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-kotlin)
 
 # 예제
 
