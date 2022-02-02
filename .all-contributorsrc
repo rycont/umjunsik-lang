@@ -104,6 +104,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "shs3182ym",
+      "name": "Sukuna Shinmyoumaru",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56759376?v=4",
+      "profile": "http://warning.or.kr",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
