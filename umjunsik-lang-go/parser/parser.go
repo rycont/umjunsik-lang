@@ -64,11 +64,6 @@ func (p *Parser) ParseProgram() *ast.Program {
 		line := p.parseLine()
 		program.Lines = append(program.Lines, line)
 
-		// if p.peekTokenIs(token.NEWLINE) {
-		// 	p.nextToken()
-		//	program.Lines = append(program.Lines, nil)
-		//}
-
 		p.nextToken()
 	}
 
@@ -83,9 +78,9 @@ func (p *Parser) parseExpressionStatement() *ast.ExpressionLine {
 	line := &ast.ExpressionLine{Token: p.curToken}
 	line.Expression = p.parseExpression()
 
-	//if p.peekTokenIs(token.NEWLINE) {
-	//	p.nextToken()
-	//}
+	if p.peekTokenIs(token.NEWLINE) {
+		p.nextToken()
+	}
 
 	return line
 }
@@ -127,17 +122,19 @@ func (p *Parser) parseUExpression() ast.Expression {
 		exp := &ast.UMExpression{Token: p.curToken}
 		exp.Index = index + 1
 
-		p.nextToken()
-		exp.Value = p.parseExpression()
-
-		if exp.Value == nil {
-			exp.Value = &ast.IntegerLiteral{
-				Token: token.Token{
-					Type:    token.PERIOD,
-					Literal: ".",
-				},
-				Value: 0,
+		if p.peekTokenIs(token.NEWLINE) {
+			if exp.Value == nil {
+				exp.Value = &ast.IntegerLiteral{
+					Token: token.Token{
+						Type:    token.PERIOD,
+						Literal: ".",
+					},
+					Value: 0,
+				}
 			}
+		} else {
+			p.nextToken()
+			exp.Value = p.parseExpression()
 		}
 
 		return exp
@@ -149,9 +146,13 @@ func (p *Parser) parseUExpression() ast.Expression {
 }
 
 func (p *Parser) parseUMExpression() ast.Expression {
-	p.nextToken()
+	if p.curTokenIs(token.UM) {
+		p.nextToken()
+	}
+
 	tmp := p.parseExpression()
 	tok := p.curToken
+
 	if tmp != nil {
 		return &ast.UMExpression{Token: tok, Index: 0, Value: tmp}
 	} else {
@@ -203,21 +204,16 @@ func (p *Parser) parseJUNExpression() ast.Expression {
 
 	exp.Index = p.parseExpression()
 
-	p.nextToken()
-
 	return exp
 }
 
 func (p *Parser) parseSIKExpression() ast.Expression {
 	if p.peekTokenIs(token.QUESTION) {
 		p.nextToken()
-		p.nextToken()
 		return &ast.SIKQExpression{Token: p.curToken}
 	}
 
 	p.nextToken()
-
-	tem := p.parseExpression()
 
 	// if p.peekTokenIs(token.BANG) {
 	//	p.nextToken()
@@ -231,16 +227,16 @@ func (p *Parser) parseSIKExpression() ast.Expression {
 			},
 			Value: 10,
 		}
-		p.nextToken()
 
 		return exp
 	}
+
+	tem := p.parseExpression()
 
 	switch p.peekToken.Type {
 	case token.BANG:
 		p.nextToken()
 		exp := &ast.SIKBExpression{Token: p.curToken}
-		p.nextToken()
 
 		exp.Value = tem
 		return exp
@@ -250,7 +246,6 @@ func (p *Parser) parseSIKExpression() ast.Expression {
 		if tem != nil {
 			exp.Value = tem
 		}
-		p.nextToken()
 		return exp
 	}
 
@@ -290,8 +285,6 @@ func (p *Parser) parseFIGHTINGExpression() ast.Expression {
 
 	exp.Value = p.parseExpression()
 
-	p.nextToken()
-
 	return exp
 }
 
@@ -317,8 +310,6 @@ func (p *Parser) parseInfixIntegerExpression(left ast.Expression) ast.Expression
 	}
 
 	exp.Right = result
-
-	p.nextToken()
 
 	return exp
 }

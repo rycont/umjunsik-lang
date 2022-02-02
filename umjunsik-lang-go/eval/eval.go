@@ -68,14 +68,10 @@ func evalProgram(program *ast.Program, env *object.Environment) object.Object {
 
 		switch result := result.(type) {
 		case *object.JUN:
-			i = int(result.Index - 2)
+			i = int(result.Index - 3)
 		case *object.Error:
 			return result
 		}
-		// fmt.Println(env)
-		// obj, _ := env.Get(0)
-		// fmt.Println(obj.(*object.Integer).Value)
-		// fmt.Println(i)
 	}
 
 	return result
