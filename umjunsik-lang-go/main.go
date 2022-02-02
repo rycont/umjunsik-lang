@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"io/ioutil"
+	"umjunsik-lang/umjunsik-lang-go/eval"
 	"umjunsik-lang/umjunsik-lang-go/lexer"
+	"umjunsik-lang/umjunsik-lang-go/object"
 	"umjunsik-lang/umjunsik-lang-go/parser"
 )
 
@@ -29,10 +30,8 @@ func Interpret(Code []byte) {
 	l := lexer.New(string(Code))
 	p := parser.New(l)
 	program := p.ParseProgram()
-
-	fmt.Println(program.String())
-	// env := object.NewEnvironment()
-	//eval.Eval(program, env)
+	env := object.NewEnvironment()
+	eval.Eval(program, env)
 
 	// for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
 	//	fmt.Println("{" + " Type : " + string(tok.Type) + ", Literal : " + tok.Literal + " }")
