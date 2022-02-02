@@ -2,7 +2,7 @@ use nom::{
     branch::alt,
     bytes::complete::tag,
     combinator::{all_consuming, map, opt},
-    multi::{fold_many1, many0, many0_count, many1_count, separated_list1},
+    multi::{fold_many0, fold_many1, many0_count, many1_count, separated_list1},
     sequence::{delimited, pair, preceded, terminated, tuple},
     IResult,
 };
@@ -79,14 +79,18 @@ fn parse_newline(s: &str) -> ParseResult<()> {
 }
 
 pub fn parse_program(s: &str) -> ParseResult<Program> {
-    all_consuming(delimited(
-        pair(tag("어떻게"), parse_newline),
-        map(
-            many0(terminated(opt(parse_statement), parse_newline)),
-            Program,
-        ),
-        tag("이 사람이름이냐ㅋㅋ"),
-    ))(s)
+    let (s, _) = terminated(tag("어떻게"), parse_newline)(s)?;
+    let (s, mut statements) = fold_many0(
+        terminated(opt(parse_statement), parse_newline),
+        || vec![None],
+        |mut acc, stmt| {
+            acc.push(stmt);
+            acc
+        },
+    )(s)?;
+    let (s, _) = all_consuming(tag("이 사람이름이냐ㅋㅋ"))(s)?;
+    statements.push(None);
+    Ok((s, Program(statements)))
 }
 
 #[cfg(test)]
@@ -231,6 +235,7 @@ mod test {
                 "",
                 Program(vec![
                     None,
+                    None,
                     Some(Statement::Assign(1, Some(Int::IO))),
                     Some(Statement::Assign(2, Some(Int::IO))),
                     None,
@@ -259,6 +264,7 @@ mod test {
                         Some(Load(2)),
                         0
                     )])))),
+                    None,
                     None,
                 ])
             )
