@@ -122,6 +122,15 @@
       "contributions": [
         "platform"
       ]
+    },
+    {
+      "login": "kiwiyou",
+      "name": "kiwiyou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12986388?v=4",
+      "profile": "http://kiwiyou.dev",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
