@@ -1,6 +1,6 @@
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
@@ -33,6 +33,7 @@
     <td align="center"><a href="https://github.com/sangchoo1201"><img src="https://avatars.githubusercontent.com/u/75765800?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sangchoo1201</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/issues?q=author%3Asangchoo1201" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://warning.or.kr"><img src="https://avatars.githubusercontent.com/u/56759376?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sukuna Shinmyoumaru</b></sub></a><br /><a href="#platform-shs3182ym" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://github.com/alvin1007"><img src="https://avatars.githubusercontent.com/u/77112874?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yeong Jae Cho</b></sub></a><br /><a href="#platform-alvin1007" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="http://kiwiyou.dev"><img src="https://avatars.githubusercontent.com/u/12986388?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kiwiyou</b></sub></a><br /><a href="#platform-kiwiyou" title="Packaging/porting to new platform">📦</a></td>
   </tr>
 </table>
 
