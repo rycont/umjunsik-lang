@@ -104,6 +104,33 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "shs3182ym",
+      "name": "Sukuna Shinmyoumaru",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56759376?v=4",
+      "profile": "http://warning.or.kr",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "alvin1007",
+      "name": "Yeong Jae Cho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77112874?v=4",
+      "profile": "https://github.com/alvin1007",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "kiwiyou",
+      "name": "kiwiyou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12986388?v=4",
+      "profile": "http://kiwiyou.dev",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,

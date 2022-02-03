@@ -1,6 +1,6 @@
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
@@ -31,6 +31,9 @@
     <td align="center"><a href="https://www.youtube.com/c/noname0310"><img src="https://avatars.githubusercontent.com/u/48761044?v=4?s=100" width="100px;" alt=""/><br /><sub><b>noname</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=noname0310" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/TralocDheckoa"><img src="https://avatars.githubusercontent.com/u/42158095?v=4?s=100" width="100px;" alt=""/><br /><sub><b>TralocDheckoa</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=TralocDheckoa" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/sangchoo1201"><img src="https://avatars.githubusercontent.com/u/75765800?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sangchoo1201</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/issues?q=author%3Asangchoo1201" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://warning.or.kr"><img src="https://avatars.githubusercontent.com/u/56759376?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sukuna Shinmyoumaru</b></sub></a><br /><a href="#platform-shs3182ym" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/alvin1007"><img src="https://avatars.githubusercontent.com/u/77112874?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yeong Jae Cho</b></sub></a><br /><a href="#platform-alvin1007" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="http://kiwiyou.dev"><img src="https://avatars.githubusercontent.com/u/12986388?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kiwiyou</b></sub></a><br /><a href="#platform-kiwiyou" title="Packaging/porting to new platform">📦</a></td>
   </tr>
 </table>
 
@@ -144,6 +147,8 @@
 - [C](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C#](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
 - [코틀린](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-kotlin)
+- [Go](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-go) : 실제 인터프리터 구조를 차용하여 개발한 고급 런타임입니다
+- [러스트](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-rust) : 실제 인터프리터 구조를 차용하여 개발한 고급 런타임입니다
 
 # 예제
 
@@ -177,3 +182,5 @@
 - 20210530 : 엄씨(엄랭-C 컴파일러) 배포 by [Rok](https://github.com/Rokr0k)
 - 20210809 : 엄랭 C# 구현체 배포 by [noname0310](https://github.com/noname0310)
 - 20220201 : 엄랭 코틀린 구현체 배포 by [shs3182ym](https://github.com/shs3182ym)
+- 20220203 : 엄랭 Go 구현체 배포 by [alvin1007](https://github.com/alvin1007)
+- 20220203 : 엄랭 러스트 구현체 배포 by [kiwiyou](https://github.com/kiwiyou)

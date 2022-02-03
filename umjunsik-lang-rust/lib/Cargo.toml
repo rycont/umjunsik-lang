@@ -1,0 +1,10 @@
+[package]
+name = "umjunsik"
+version = "0.1.0"
+edition = "2021"
+authors = ["kiwiyou <kiwiyou@kiwiyou.dev>"]
+
+[features]
+
+[dependencies]
+nom = "7.1.0"

@@ -1,0 +1,9 @@
+[package]
+name = "rummi"
+version = "0.1.0"
+edition = "2021"
+authors = ["kiwiyou <kiwiyou@kiwiyou.dev>"]
+
+[dependencies]
+clap = { version = "3.0.13", features = ["derive"] }
+umjunsik = { version = "0.1.0", path = "../lib" }
