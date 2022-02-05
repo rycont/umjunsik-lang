@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
             strcpy(output_path, strrchr(input_path, '/') + 1);
             strcpy(strrchr(output_path, '.'), ".s");
         }
-        sprintf(command, "gcc -S -x c - -o %s", output_path);
+        sprintf(command, "gcc -S -x c - -o \"%s\"", output_path);
         output = popen(command, "w");
         break;
     default:
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
         {
             strcpy(output_path, "a.out");
         }
-        sprintf(command, "gcc -x c - -o %s", output_path);
+        sprintf(command, "gcc -x c - -o \"%s\"", output_path);
         output = popen(command, "w");
         break;
     }
@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
     ispipe ? pclose(output) : fclose(output);
 #else
     char temp_path[4096] = {0};
-    strcpy(temp_path, input_path);
+    strcpy(temp_path, strrchr(input_path, '/') + 1);
     strcpy(strrchr(temp_path, '.'), ".c");
     fseek(input, 0L, SEEK_END);
     long l = ftell(input);
@@ -147,44 +147,28 @@ int main(int argc, char *argv[])
     case SRC:
         if (output_path[0])
         {
-            if (strcmp(strrchr(output_path, '.'), ".c") == 0)
-            {
-                moveFile(temp_path, output_path);
-            }
-            else
-            {
-                sprintf(command, "gcc -S \"%s\" -o %s", temp_path, output_path);
-                system(command);
-                remove(temp_path);
-            }
-        }
-        else
-        {
-            sprintf(command, "gcc -S \"%s\"", temp_path);
-            system(command);
+            moveFile(temp_path, output_path);
             remove(temp_path);
         }
         break;
-    case OBJ:
-        if (output_path[0])
+    case ASM:
+        if (output_path[0] == 0)
         {
-            sprintf(command, "gcc -c \"%s\" -o %s", temp_path, output_path);
+            strcpy(output_path, strrchr(input_path, '/') + 1);
+            strcpy(strrchr(output_path, '.'), ".s");
         }
-        else
-        {
-            sprintf(command, "gcc -c \"%s\"", temp_path);
-        }
+        sprintf(command, "gcc -S \"%s\" -o \"%s\"", temp_path, output_path);
         system(command);
         remove(temp_path);
         break;
     default:
-        if (output_path)
+        if (output_path[0] == 0)
         {
-            sprintf(command, "gcc \"%s\" -o %s", temp_path, output_path);
+            sprintf(command, "gcc \"%s\"", temp_path);
         }
         else
         {
-            sprintf(command, "gcc \"%s\"", temp_path);
+            sprintf(command, "gcc \"%s\" -o \"%s\"", temp_path, output_path);
         }
         system(command);
         remove(temp_path);
