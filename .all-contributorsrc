@@ -140,6 +140,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "sean9892",
+      "name": "Yubin Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46587635?v=4",
+      "profile": "https://github.com/sean9892",
+      "contributions": [
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,
