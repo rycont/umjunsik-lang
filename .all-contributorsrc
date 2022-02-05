@@ -113,6 +113,60 @@
       "contributions": [
         "platform"
       ]
+    },
+    {
+      "login": "alvin1007",
+      "name": "Yeong Jae Cho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77112874?v=4",
+      "profile": "https://github.com/alvin1007",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "kiwiyou",
+      "name": "kiwiyou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12986388?v=4",
+      "profile": "http://kiwiyou.dev",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "kyle-seongwoo-jun",
+      "name": "Kyle Seongwoo Jun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16515307?v=4",
+      "profile": "https://seongxwoo.notion.site/Kyle-b49a1520f7ea4d5a86acedcf201129f6",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "sean9892",
+      "name": "Yubin Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46587635?v=4",
+      "profile": "https://github.com/sean9892",
+      "contributions": [
+        "example"
+      ]
+    },
+    {
+      "login": "Baekjoon",
+      "name": "Baekjoon Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/706317?v=4",
+      "profile": "https://www.acmicpc.net",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "EGGnmad",
+      "name": "ㅇㅂㅎ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/93484785?v=4",
+      "profile": "https://eggnmad.com/info/",
+      "contributions": [
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,

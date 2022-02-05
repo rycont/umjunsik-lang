@@ -98,7 +98,7 @@ fun main(args: Array<String>) {
         throw IOException("파일을 읽을 수 없음")
     }
     else {
-        var codes = f.readText().trim().split("\n")
+        var codes = f.readText().trim().replace("~", "\n").split("\n")
 
         if(codes[0] != "어떻게" && codes.last() != "이 사람이름이냐ㅋㅋ"){
             throw Exception("어떻게 이게 엄랭이냐ㅋㅋ")
