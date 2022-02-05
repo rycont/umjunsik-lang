@@ -27,6 +27,9 @@ struct Args {
     /// Target features
     #[clap(long, short, default_value = "")]
     features: String,
+    /// Optimize aggressively if set
+    #[clap(long, short = 'O')]
+    optimize: bool,
 }
 
 fn main() {
@@ -43,12 +46,17 @@ fn main() {
     Target::initialize_all(&Default::default());
     let triple = TargetTriple::create(&args.target);
     let target = Target::from_triple(&triple).expect("지원하지 않는 타겟입니다.");
+    let level = if args.optimize {
+        OptimizationLevel::Aggressive
+    } else {
+        OptimizationLevel::None
+    };
     let machine = target
         .create_target_machine(
             &triple,
             "",
             &args.features,
-            OptimizationLevel::None,
+            level,
             RelocMode::Default,
             CodeModel::Default,
         )
