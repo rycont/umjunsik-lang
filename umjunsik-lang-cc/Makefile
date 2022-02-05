@@ -5,7 +5,9 @@ OBJ = $(C_SOURCES:src/%.c=bin/%.o)
 CC = gcc
 CFLAGS = -Wall
 
-bin/ummc: ${OBJ}
+TARGET = bin/umcc
+
+${TARGET}: ${OBJ}
 	${CC} ${CFLAGS} $^ -o $@
 
 bin/%.o: src/%.c ${HEADERS} bin
@@ -15,4 +17,4 @@ bin:
 	mkdir bin
 
 clean:
-	rm -rf ${OBJ} bin/ummc bin
+	rm -rf ${OBJ} ${TARGET} bin
