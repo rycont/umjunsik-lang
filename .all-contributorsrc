@@ -140,6 +140,15 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "Baekjoon",
+      "name": "Baekjoon Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/706317?v=4",
+      "profile": "https://www.acmicpc.net",
+      "contributions": [
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
