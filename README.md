@@ -1,18 +1,25 @@
+### 백준에서 엄랭을 만나보세요!
+
+[백준 설정](https://www.acmicpc.net/setting/language)에서 "엄준식"을 활성화해주면 엄랭으로 문제를 풀 수 있습니다
+
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
 
 # 엄랭
 
-**주의: 이미 Umlang이라는 프로젝트가 있기때문에, 꼭 한글로만 표기해주세요.**
-영문표기를 해야할때는 "Um. Junsik Lang" (or "Umjunsik-lang")이라고 표기해주세요.
+[cjaewon/umlang](https://github.com/cjaewon/umlang)에 영감을 받아 제작되었습니다
+
+**주의: Umlang 표기는 위의 프로젝트와 겹치기 때문에, 꼭 한글로만 표기해주세요.**
+영문표기를 해야할때는 "umjunsik-lang"이라고 표기해주세요.
 
 엄랭은 세계 최초의 인물이름으로 만들어진 난해한 프로그래밍 언어입니다. 엄준식이 어떻게 인물 이름이냐고요? 그러게요ㅋㅋ 어떻게 엄준식이 어떻게 사람 이름이지ㅋㅋ "엄준식 사람이름인데요"
 
 # Contributors ✨
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -32,6 +39,14 @@
     <td align="center"><a href="https://github.com/TralocDheckoa"><img src="https://avatars.githubusercontent.com/u/42158095?v=4?s=100" width="100px;" alt=""/><br /><sub><b>TralocDheckoa</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=TralocDheckoa" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/sangchoo1201"><img src="https://avatars.githubusercontent.com/u/75765800?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sangchoo1201</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/issues?q=author%3Asangchoo1201" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://warning.or.kr"><img src="https://avatars.githubusercontent.com/u/56759376?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sukuna Shinmyoumaru</b></sub></a><br /><a href="#platform-shs3182ym" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="https://github.com/alvin1007"><img src="https://avatars.githubusercontent.com/u/77112874?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yeong Jae Cho</b></sub></a><br /><a href="#platform-alvin1007" title="Packaging/porting to new platform">📦</a></td>
+    <td align="center"><a href="http://kiwiyou.dev"><img src="https://avatars.githubusercontent.com/u/12986388?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kiwiyou</b></sub></a><br /><a href="#platform-kiwiyou" title="Packaging/porting to new platform">📦</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://seongxwoo.notion.site/Kyle-b49a1520f7ea4d5a86acedcf201129f6"><img src="https://avatars.githubusercontent.com/u/16515307?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kyle Seongwoo Jun</b></sub></a><br /><a href="#infra-kyle-seongwoo-jun" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/sean9892"><img src="https://avatars.githubusercontent.com/u/46587635?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yubin Choi</b></sub></a><br /><a href="#example-sean9892" title="Examples">💡</a></td>
+    <td align="center"><a href="https://www.acmicpc.net"><img src="https://avatars.githubusercontent.com/u/706317?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Baekjoon Choi</b></sub></a><br /><a href="#infra-Baekjoon" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://eggnmad.com/info/"><img src="https://avatars.githubusercontent.com/u/93484785?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ㅇㅂㅎ</b></sub></a><br /><a href="#example-EGGnmad" title="Examples">💡</a></td>
   </tr>
 </table>
 
@@ -145,7 +160,10 @@
 - [C](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C#](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
 - [코틀린](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-kotlin)
+- [Go](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-go) : 실제 인터프리터 구조를 차용하여 개발한 고급 런타임입니다
+- [러스트](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-rust) : 실제 인터프리터 구조를 차용하여 개발한 고급 런타임입니다
 
++ [류갓 WebIDE에서 엄랭을 실행할 수 있습니다](https://www.ryugod.com/)
 # 예제
 
 [위키를 참조해주세요](https://github.com/rycont/umjunsik-lang/wiki)
@@ -178,3 +196,5 @@
 - 20210530 : 엄씨(엄랭-C 컴파일러) 배포 by [Rok](https://github.com/Rokr0k)
 - 20210809 : 엄랭 C# 구현체 배포 by [noname0310](https://github.com/noname0310)
 - 20220201 : 엄랭 코틀린 구현체 배포 by [shs3182ym](https://github.com/shs3182ym)
+- 20220203 : 엄랭 Go 구현체 배포 by [alvin1007](https://github.com/alvin1007)
+- 20220203 : 엄랭 러스트 구현체 배포 by [kiwiyou](https://github.com/kiwiyou)
