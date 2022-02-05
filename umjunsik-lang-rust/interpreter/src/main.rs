@@ -2,9 +2,10 @@ use std::{collections::HashMap, fmt::Display, io::Write};
 
 use clap::Parser;
 use umjunsik::{
-    ast::{Int, Load, PureInt, Statement},
+    ast::{Load, Multiply, Statement},
     parser::parse_statement,
 };
+use whiteread::Reader;
 
 /// Umjunsik-lang REPL / Interpreter
 #[derive(Parser, Debug)]
@@ -19,7 +20,7 @@ fn main() {
 
     let exit_code = if let Some(input) = args.input {
         let code = std::fs::read_to_string(&input).expect("파일을 읽는 도중 오류가 발생했습니다.");
-        interpret(&code)
+        interpret(code.trim())
     } else {
         repl().expect("REPL 실행 중 오류가 발생했습니다.")
     };
@@ -27,7 +28,14 @@ fn main() {
 }
 
 fn repl() -> std::io::Result<i32> {
-    let mut ctx = Context::default();
+    let stdin = std::io::stdin();
+    let mut ctx = Context {
+        len: 0,
+        pc: 0,
+        vars: HashMap::new(),
+        exit: None,
+        reader: Reader::new(stdin.lock()),
+    };
     let mut input = String::new();
     while ctx.exit.is_none() {
         print!("> ");
@@ -52,12 +60,16 @@ fn repl() -> std::io::Result<i32> {
 fn interpret(code: &str) -> i32 {
     let (_, program) = umjunsik::parser::parse_program(code).expect("코드의 문법이 맞지 않습니다.");
 
+    let stdin = std::io::stdin();
     let mut ctx = Context {
-        len: program.0.len(),
-        ..Default::default()
+        len: program.statements.len(),
+        pc: 0,
+        vars: HashMap::new(),
+        exit: None,
+        reader: Reader::new(stdin.lock()),
     };
     while ctx.pc < ctx.len {
-        if let Some(statement) = &program.0[ctx.pc] {
+        if let Some(statement) = &program.statements[ctx.pc] {
             ctx.pc += 1;
             let pc = ctx.pc;
             if let Err(e) = run_statement(&mut ctx, statement) {
@@ -74,53 +86,55 @@ fn interpret(code: &str) -> i32 {
     ctx.exit.unwrap_or(0)
 }
 
-#[derive(Default)]
-struct Context {
+struct Context<'a> {
     len: usize,
     pc: usize,
     vars: HashMap<usize, i32>,
     exit: Option<i32>,
+    reader: whiteread::Reader<std::io::StdinLock<'a>>,
 }
 
 enum Error {
-    Overflow,
     GotoOutOfRange,
     UnicodeOutOfRange,
+    InputNotNumber,
 }
 
 impl Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::Overflow => write!(f, "계산 도중 오버플로가 일어났습니다."),
             Self::GotoOutOfRange => write!(f, "\"준\" 명령에 주어진 줄 수가 범위를 벗어났습니다."),
             Self::UnicodeOutOfRange => {
                 write!(f, "\"식ㅋ\" 명령에 주어진 유니코드가 범위를 벗어났습니다.")
             }
+            Self::InputNotNumber => write!(f, "입력이 수가 아닙니다."),
         }
     }
 }
 
 fn run_statement(ctx: &mut Context, statement: &Statement) -> Result<(), Error> {
     match statement {
-        Statement::Assign(i, num) => {
-            let num = match num {
-                Some(Int::Pure(pure_int)) => get_pure_int(ctx, pure_int)?,
-                Some(Int::IO) => read_int(),
+        Statement::Assign { index, value } => {
+            let value = match value {
+                Some(multiply) => get_multiply(ctx, multiply)?,
                 None => 0,
             };
-            ctx.vars.entry(*i).and_modify(|v| *v = num).or_insert(num);
+            ctx.vars
+                .entry(*index)
+                .and_modify(|v| *v = value)
+                .or_insert(value);
         }
-        Statement::PrintInt(num) => {
-            let num = match num {
-                Some(pure_int) => get_pure_int(ctx, pure_int)?,
+        Statement::PrintInt { value } => {
+            let value = match value {
+                Some(multiply) => get_multiply(ctx, multiply)?,
                 None => 0,
             };
-            print!("{}", num);
+            print!("{}", value);
         }
-        Statement::PrintChar(num) => {
-            let char = match num {
-                Some(pure_int) => {
-                    let code: u32 = get_pure_int(ctx, pure_int)?
+        Statement::PrintChar { codepoint } => {
+            let char = match codepoint {
+                Some(multiply) => {
+                    let code: u32 = get_multiply(ctx, multiply)?
                         .try_into()
                         .map_err(|_| Error::UnicodeOutOfRange)?;
                     char::from_u32(code).ok_or(Error::UnicodeOutOfRange)?
@@ -129,63 +143,55 @@ fn run_statement(ctx: &mut Context, statement: &Statement) -> Result<(), Error> 
             };
             print!("{}", char);
         }
-        Statement::If(num, statement) => {
-            let num = match num {
-                Some(pure_int) => get_pure_int(ctx, pure_int)?,
+        Statement::If {
+            condition,
+            statement,
+        } => {
+            let condition = match condition {
+                Some(multiply) => get_multiply(ctx, multiply)?,
                 None => 0,
             };
-            if num == 0 {
+            if condition == 0 {
                 return run_statement(ctx, statement.as_ref());
             }
         }
-        Statement::Goto(num) => {
-            let num = match num {
-                Some(pure_int) => get_pure_int(ctx, pure_int)?,
+        Statement::Goto { line } => {
+            let line = match line {
+                Some(multiply) => get_multiply(ctx, multiply)?,
                 None => 0,
             };
-            if 1 <= num && (num as usize) <= ctx.len {
-                ctx.pc = num as usize - 1;
+            if 1 <= line && (line as usize) <= ctx.len {
+                ctx.pc = line as usize - 1;
             } else {
                 return Err(Error::GotoOutOfRange);
             }
         }
-        Statement::Exit(num) => {
-            let num = match num {
-                Some(pure_int) => get_pure_int(ctx, pure_int)?,
+        Statement::Exit { code } => {
+            let code = match code {
+                Some(multiply) => get_multiply(ctx, multiply)?,
                 None => 0,
             };
-            ctx.exit = Some(num);
+            ctx.exit = Some(code);
         }
     }
     Ok(())
 }
 
-fn get_pure_int(ctx: &mut Context, pure_int: &PureInt) -> Result<i32, Error> {
+fn get_multiply(ctx: &mut Context, multiply: &Multiply) -> Result<i32, Error> {
     let mut result = 1i32;
-    for term in &pure_int.0 {
+    for term in &multiply.terms {
         let load = term
-            .0
+            .load
             .as_ref()
-            .map(|&Load(i)| *ctx.vars.entry(i).or_insert(0))
+            .map(|&Load { index }| *ctx.vars.entry(index).or_insert(0))
             .unwrap_or(0);
-        let (term_value, overflow) = load.overflowing_add(term.1);
-        if overflow {
-            return Err(Error::Overflow);
+        let mut term_value = load.wrapping_add(term.add);
+        for _ in 0..term.input {
+            let add = ctx.reader.parse().map_err(|_| Error::InputNotNumber)?;
+            term_value = term_value.wrapping_add(add);
         }
-        let (new_result, overflow) = result.overflowing_mul(term_value);
-        if overflow {
-            return Err(Error::Overflow);
-        }
+        let new_result = result.wrapping_mul(term_value);
         result = new_result;
     }
     Ok(result)
-}
-
-fn read_int() -> i32 {
-    let mut line = String::new();
-    if std::io::stdin().read_line(&mut line).is_err() {
-        0
-    } else {
-        line.parse().unwrap_or(0)
-    }
 }

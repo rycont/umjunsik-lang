@@ -7,3 +7,4 @@ authors = ["kiwiyou <kiwiyou@kiwiyou.dev>"]
 [dependencies]
 clap = { version = "3.0.13", features = ["derive"] }
 umjunsik = { version = "0.1.0", path = "../lib" }
+whiteread = "0.5.0"
