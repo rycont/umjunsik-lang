@@ -15,7 +15,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -42,6 +42,7 @@
   </tr>
   <tr>
     <td align="center"><a href="https://seongxwoo.notion.site/Kyle-b49a1520f7ea4d5a86acedcf201129f6"><img src="https://avatars.githubusercontent.com/u/16515307?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kyle Seongwoo Jun</b></sub></a><br /><a href="#infra-kyle-seongwoo-jun" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://www.acmicpc.net"><img src="https://avatars.githubusercontent.com/u/706317?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Baekjoon Choi</b></sub></a><br /><a href="#infra-Baekjoon" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
