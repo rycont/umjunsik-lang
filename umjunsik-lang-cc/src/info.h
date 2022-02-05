@@ -13,12 +13,13 @@
 "For bug report, please contact\n" \
 "<yangeh2225@gmail.com>.\n"
 #define VERSION_S \
-"ummc 1.0\n" \
-"Copyright (C) 2021 Rok\n" \
+"ummc 1.1\n" \
+"Copyright (C) 2022 Rok\n" \
 "\n" \
 "umjunsik-lang\n" \
 "Copyright (C) 2020 RyCont\n"
 
 #define SRC 0x1
+#define ASM 0x2
 
 #endif
