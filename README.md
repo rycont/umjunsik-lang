@@ -15,7 +15,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -42,6 +42,7 @@
   </tr>
   <tr>
     <td align="center"><a href="https://seongxwoo.notion.site/Kyle-b49a1520f7ea4d5a86acedcf201129f6"><img src="https://avatars.githubusercontent.com/u/16515307?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kyle Seongwoo Jun</b></sub></a><br /><a href="#infra-kyle-seongwoo-jun" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/sean9892"><img src="https://avatars.githubusercontent.com/u/46587635?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yubin Choi</b></sub></a><br /><a href="#example-sean9892" title="Examples">💡</a></td>
   </tr>
 </table>
 
