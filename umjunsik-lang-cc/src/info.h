@@ -2,7 +2,7 @@
 #define INFO_H
 
 #define HELP_S \
-"Usage: ummc [options] file...\n" \
+"Usage: umcc [options] file...\n" \
 "Options:\n" \
 "  -h | --help       Display this helpful text :)\n" \
 "  -v | --version    Display compiler information.\n" \
@@ -13,12 +13,13 @@
 "For bug report, please contact\n" \
 "<yangeh2225@gmail.com>.\n"
 #define VERSION_S \
-"ummc 1.0\n" \
-"Copyright (C) 2021 Rok\n" \
+"umcc 1.1\n" \
+"Copyright (C) 2022 Rok\n" \
 "\n" \
 "umjunsik-lang\n" \
-"Copyright (C) 2020 RyCont\n"
+"Copyright (C) 2022 Rycont\n"
 
 #define SRC 0x1
+#define ASM 0x2
 
 #endif
