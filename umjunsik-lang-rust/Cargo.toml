@@ -1,5 +1,2 @@
 [workspace]
-members = [
-    "lib",
-    "interpreter",
-]
+members = ["lib", "interpreter", "compiler"]

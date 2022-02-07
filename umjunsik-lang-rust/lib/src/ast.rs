@@ -1,29 +1,45 @@
 #[derive(Debug, PartialEq)]
-pub struct Load(pub usize);
+pub struct Load {
+    pub index: usize,
+}
 
 #[derive(Debug, PartialEq)]
-pub struct Term(pub Option<Load>, pub i32);
+pub struct Term {
+    pub load: Option<Load>,
+    pub add: i32,
+    pub input: usize,
+}
 
 #[derive(Debug, PartialEq)]
-pub struct Multiply(pub Vec<Term>);
-
-pub type PureInt = Multiply;
-
-#[derive(Debug, PartialEq)]
-pub enum Int {
-    Pure(PureInt),
-    IO,
+pub struct Multiply {
+    pub terms: Vec<Term>,
 }
 
 #[derive(Debug, PartialEq)]
 pub enum Statement {
-    Assign(usize, Option<Int>),
-    PrintInt(Option<PureInt>),
-    PrintChar(Option<PureInt>),
-    If(Option<PureInt>, Box<Statement>),
-    Goto(Option<PureInt>),
-    Exit(Option<PureInt>),
+    Assign {
+        index: usize,
+        value: Option<Multiply>,
+    },
+    PrintInt {
+        value: Option<Multiply>,
+    },
+    PrintChar {
+        codepoint: Option<Multiply>,
+    },
+    If {
+        condition: Option<Multiply>,
+        statement: Box<Statement>,
+    },
+    Goto {
+        line: Option<Multiply>,
+    },
+    Exit {
+        code: Option<Multiply>,
+    },
 }
 
 #[derive(Debug, PartialEq)]
-pub struct Program(pub Vec<Option<Statement>>);
+pub struct Program {
+    pub statements: Vec<Option<Statement>>,
+}
