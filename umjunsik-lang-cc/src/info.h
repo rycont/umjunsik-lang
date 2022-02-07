@@ -17,7 +17,7 @@
 "Copyright (C) 2022 Rok\n" \
 "\n" \
 "umjunsik-lang\n" \
-"Copyright (C) 2020 RyCont\n"
+"Copyright (C) 2022 Rycont\n"
 
 #define SRC 0x1
 #define ASM 0x2
