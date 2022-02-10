@@ -93,7 +93,7 @@ pub fn parse_statement(s: &str) -> ParseResult<Statement> {
                 statement: Box::new(statement),
             },
         ),
-        map(preceded(tag("준"), opt(parse_multiply)), |int| {
+        map(preceded(tag("준"), parse_multiply), |int| {
             Statement::Goto { line: int }
         }),
         map(preceded(tag("화이팅!"), opt(parse_multiply)), |int| {
@@ -380,7 +380,7 @@ mod test {
                                 }]
                             }),
                             statement: Box::new(Statement::Goto {
-                                line: Some(Multiply {
+                                line: Multiply {
                                     terms: vec![
                                         Term {
                                             load: None,
@@ -393,7 +393,7 @@ mod test {
                                             input: 0
                                         }
                                     ]
-                                })
+                                }
                             })
                         }),
                         None,
@@ -419,7 +419,7 @@ mod test {
                         }),
                         None,
                         Some(Statement::Goto {
-                            line: Some(Multiply {
+                            line: Multiply {
                                 terms: vec![
                                     Term {
                                         load: None,
@@ -432,7 +432,7 @@ mod test {
                                         input: 0
                                     },
                                 ]
-                            })
+                            }
                         }),
                         Some(Statement::PrintInt {
                             value: Some(Multiply {

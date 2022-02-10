@@ -156,10 +156,7 @@ fn run_statement(ctx: &mut Context, statement: &Statement) -> Result<(), Error> 
             }
         }
         Statement::Goto { line } => {
-            let line = match line {
-                Some(multiply) => get_multiply(ctx, multiply)?,
-                None => 0,
-            };
+            let line = get_multiply(ctx, line)?;
             if 1 <= line && (line as usize) <= ctx.len {
                 ctx.pc = line as usize - 1;
             } else {
