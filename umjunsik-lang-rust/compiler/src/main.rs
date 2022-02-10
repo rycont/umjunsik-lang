@@ -295,10 +295,15 @@ impl Compiler<'_, '_> {
                 let line_minus_one = self
                     .builder
                     .build_int_sub(line, minus_one, "goto_minus_one");
-                let address = unsafe {
-                    self.builder
-                        .build_in_bounds_gep(addrs, &[line_minus_one], "get_jump_addr")
+                let zero = self.context.i32_type().const_zero();
+                let address_ptr = unsafe {
+                    self.builder.build_in_bounds_gep(
+                        addrs,
+                        &[zero, line_minus_one],
+                        "index_jump_addr",
+                    )
                 };
+                let address = self.builder.build_load(address_ptr, "fetch_jump_addr");
                 self.builder.build_indirect_branch(address, blocks);
             }
             Statement::Exit { code } => {
