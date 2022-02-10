@@ -78,9 +78,14 @@ fn main() {
     };
     compiler.compile_program(&program);
 
+    compiler
+        .module
+        .verify()
+        .expect("컴파일 오류가 발생했습니다.");
+
     machine
-        .write_to_file(&module, FileType::Object, args.output.as_ref())
-        .expect("오류가 발생했습니다.");
+        .write_to_file(&module, FileType::Assembly, args.output.as_ref())
+        .expect("출력 중 오류가 발생했습니다.");
 }
 
 struct Compiler<'ctx, 'a> {
@@ -228,7 +233,13 @@ impl Compiler<'_, '_> {
         prod
     }
 
-    fn compile_statement(&self, next: BasicBlock, statement: &Statement, blocks: &[BasicBlock]) {
+    fn compile_statement(
+        &self,
+        next: BasicBlock,
+        statement: &Statement,
+        blocks: &[BasicBlock],
+        addrs: PointerValue,
+    ) {
         match statement {
             Statement::Assign { index, value } => {
                 let value = value
@@ -276,20 +287,19 @@ impl Compiler<'_, '_> {
                 self.builder
                     .build_conditional_branch(condition, then_block, next);
                 self.builder.position_at_end(then_block);
-                self.compile_statement(next, statement, blocks);
+                self.compile_statement(next, statement, blocks, addrs);
             }
             Statement::Goto { line } => {
-                let prod = if let Some(multiply) = line {
-                    multiply.terms.iter().fold(1, |acc, term| acc * term.add)
-                } else {
-                    1
-                };
-                if prod > 0 && prod as usize <= blocks.len() {
+                let line = self.compile_multiply(line);
+                let minus_one = self.context.i32_type().const_int(1, false);
+                let line_minus_one = self
+                    .builder
+                    .build_int_sub(line, minus_one, "goto_minus_one");
+                let address = unsafe {
                     self.builder
-                        .build_unconditional_branch(blocks[prod as usize - 1]);
-                } else {
-                    self.builder.build_unconditional_branch(next);
-                }
+                        .build_in_bounds_gep(addrs, &[line_minus_one], "get_jump_addr")
+                };
+                self.builder.build_indirect_branch(address, blocks);
             }
             Statement::Exit { code } => {
                 let code = code
@@ -307,9 +317,24 @@ impl Compiler<'_, '_> {
         self.compile_print_char();
 
         let mut blocks = vec![];
+        let mut addrs = vec![];
+        // https://llvm.org/docs/LangRef.html
+        // blockaddress always has i8 addrspace(P)* type
+        let addr_type = self.context.i8_type().ptr_type(AddressSpace::Generic);
+        // safety: addrs must be used only in build_indirect_branch
         for _ in 0..program.statements.len() {
-            blocks.push(self.context.append_basic_block(self.main_func, "statement"));
+            let block = self.context.append_basic_block(self.main_func, "statement");
+            blocks.push(block);
+            // panic safety: entry block is self.context.main_block
+            addrs.push(unsafe { block.get_address() }.unwrap());
         }
+        let addr_array = addr_type.const_array(&addrs);
+        let addrs = self.module.add_global(
+            addr_type.array_type(addrs.len() as u32),
+            None,
+            "block_addrs",
+        );
+        addrs.set_initializer(&addr_array);
 
         let end = self.context.append_basic_block(self.main_func, "end");
         self.builder.position_at_end(end);
@@ -320,7 +345,7 @@ impl Compiler<'_, '_> {
         for (i, (&block, statement)) in blocks.iter().zip(&program.statements).enumerate() {
             self.builder.position_at_end(block);
             if let Some(statement) = statement {
-                self.compile_statement(blocks[i + 1], statement, &blocks);
+                self.compile_statement(blocks[i + 1], statement, &blocks, addrs.as_pointer_value());
             } else {
                 self.builder.build_unconditional_branch(blocks[i + 1]);
             }

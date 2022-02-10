@@ -32,7 +32,7 @@ pub enum Statement {
         statement: Box<Statement>,
     },
     Goto {
-        line: Option<Multiply>,
+        line: Multiply,
     },
     Exit {
         code: Option<Multiply>,
