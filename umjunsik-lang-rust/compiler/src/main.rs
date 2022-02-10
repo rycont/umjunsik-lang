@@ -84,7 +84,7 @@ fn main() {
         .expect("컴파일 오류가 발생했습니다.");
 
     machine
-        .write_to_file(&module, FileType::Assembly, args.output.as_ref())
+        .write_to_file(&module, FileType::Object, args.output.as_ref())
         .expect("출력 중 오류가 발생했습니다.");
 }
 
