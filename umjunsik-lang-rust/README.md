@@ -9,6 +9,7 @@
 
 ## 컴파일러
 
-`cargo run -p rummc -- <파일명> -o <출력 파일명> -t <target triple>`로 object 파일을 생성할 수 있습니다.
+`cargo run -p rummc -- <파일명> -o <출력 파일명>`로 object 파일을 생성할 수 있습니다.
 
-`clang <object 파일명> -o <출력 파일명>`으로 실행 파일을 생성할 수 있습니다.
+이후 `gcc -o <실행 파일명> <object 파일명>`이나
+`clang -o <실행 파일명> <object 파일명>`으로 실행 파일을 생성할 수 있습니다.

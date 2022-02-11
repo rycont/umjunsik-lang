@@ -1,6 +1,7 @@
 use std::{cell::RefCell, collections::HashMap, path::Path};
 
 use clap::Parser;
+use guess_host_triple::guess_host_triple;
 use inkwell::{
     basic_block::BasicBlock,
     builder::Builder,
@@ -23,7 +24,7 @@ struct Args {
     output: String,
     #[clap(long, short)]
     /// Compile target triple
-    target: String,
+    target: Option<String>,
     /// Target features
     #[clap(long, short, default_value = "")]
     features: String,
@@ -44,7 +45,12 @@ fn main() {
     let context = Context::create();
     let module = context.create_module(path.file_name().unwrap().to_str().unwrap());
     Target::initialize_all(&Default::default());
-    let triple = TargetTriple::create(&args.target);
+    let host_triple = args
+        .target
+        .as_deref()
+        .or_else(|| guess_host_triple())
+        .expect("빌드 타겟을 직접 지정해주세요.");
+    let triple = TargetTriple::create(&host_triple);
     let target = Target::from_triple(&triple).expect("지원하지 않는 타겟입니다.");
     let level = if args.optimize {
         OptimizationLevel::Aggressive
