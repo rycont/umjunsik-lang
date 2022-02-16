@@ -87,7 +87,7 @@ function run(code, input) {
 		const statement = statements[pointer++];
 		const evaluated = execute(statement);
 		dumpsElem.value =
-			'Variables:\n' + variables.reduce((prev, curr, i) => prev + (i++ + '. ' + curr) + '\n', '') +
+			'Variables:\n' + variables.reduce((prev, curr, i) => prev + (i + '. ' + curr) + '\n', '') +
 			'\n\nStatement: (' + pointer + '/' + statements.length + ')\n' + (statements[pointer] || '') +
 			(typeof evaluated !== 'undefined' ? '\n\nReturned: ' + evaluated : '');
 		if (typeof evaluated !== 'undefined') stop();
