@@ -217,7 +217,7 @@ Sub start()
     
     Cells(current_command_row + 4, 4).Select
     '콘솔 입력 부분을 제외한 나머지 명령 처리는 Selection 대신 command 사용
-    Dim command As String
+    Dim command As Variant
     command = Selection.Value
     
     Dim error_code As Integer
@@ -299,13 +299,14 @@ IfCommand:
         If (Cells(current_command_row + 4, 2).Value = "▲") Then
             Exit Do
         End If
-        
+		
+		'앞뒤 공백 자르기
+		command = Trim(command)
+		
         '빈 줄은 무시
-        If (IsEmpty(command)) Then
+        If (Len(command) = 0) Then
             GoTo Continue1
         End If
-        
-        command = Trim(command)
         
         '변수 계산
         Dim variable_count, number, updated_var_row, var_end_point As Long
@@ -337,8 +338,10 @@ IfCommand:
                 variable_count = ParseVariable(command, 1, Len(command), var_end_point, is_called, error_code)
                 If (error_code <> 0) Then
                     Call ErrorCode(error_code)
-                    return_num = -1
-                    Exit Sub
+                    If (error_code < 0) Then
+                        return_num = -1
+                        Exit Sub
+                    End If
                 ElseIf (is_called) Then
                     Call ErrorCode(251) 'Warn 251
                 End If
@@ -580,10 +583,11 @@ IfCommand:
         
 Continue1:
         
-        If (visual And count_for_visual Mod 100 = 0) Then '시각 모드 해제 시 100회마다 1번씩 화면 업데이트
+        If (visual And count_for_visual >= 100) Then '시각 모드 해제 시 100회마다 1번씩 화면 업데이트
             Application.ScreenUpdating = True
             Cells(current_console_row + 4, 6).Select
             Application.ScreenUpdating = False
+            count_for_visual = 0
         End If
         
         If (blocking) Then '비주얼 생략 모드에서 중단점 적용 시 화면 업데이트
@@ -654,7 +658,7 @@ Sub Delay(ByVal a As Double)
 End Sub
 
 Sub ErrorCode(ByVal error_code As Integer)
-    Dim contents As String
+    Dim contents
     contents = vbNullString
     
     If (error_code < 0) Then '오류
@@ -670,7 +674,7 @@ Sub ErrorCode(ByVal error_code As Integer)
     Cells(current_command_row + 4, 4).Select
 End Sub
 
-Private Function FindEndPoint()
+Private Function FindEndPoint() As Long
     FindEndPoint = 1
     
     For i = 0 To 10000
@@ -686,16 +690,16 @@ Private Function FindEndPoint()
     FindEndPoint = -1
 End Function
 
-Function ParseVariable(ByVal Target As String, ByVal start_point As Long, ByVal restriction_end_point As Long, _
-                       ByRef end_point As Long, ByRef is_called As Boolean, ByRef error_code As Integer)
-    Dim n_start_point, tmp_end_point, tmp_number, orig_len_of_target, target_is_modified
-    Dim is_called_for_v3, is_called_for_v3_last_k '"어" 변수 호출 또는 "어...ㅋ"의 변수 호출인지 확인
+Function ParseVariable(ByVal Target As Variant, ByVal start_point As Long, ByVal restriction_end_point As Long, ByRef end_point As Long, ByRef is_called As Boolean, ByRef error_code As Integer) As Long
+'MsgBox "target:" & target & "start_point: " & start_point & "restriction_end_point: " & restriction_end_point
+    Dim n_start_point, tmp_end_point, tmp_number, orig_len_of_target As Long
+    Dim target_is_modified, is_called_for_v3 As Boolean
+    Dim is_called_for_v3_last_k As Long '"어" 변수 호출 또는 "어...ㅋ"의 변수 호출인지 확인
     n_start_point = start_point
     tmp_end_point = start_point
     tmp_number = 0
     target_is_modified = False
     orig_len_of_target = restriction_end_point
-    
     ParseVariable = 1
     is_called = True
     
@@ -810,11 +814,13 @@ Function ParseVariable(ByVal Target As String, ByVal start_point As Long, ByVal 
     Exit Function
 End Function
 
-Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVal end_point, ByRef error_code)
-    Dim list_infix(), list_postfix(), stack_translate(), stack_calc()
-    Dim prev_char, count
+Function CalculateNumber(ByVal Target As Variant, ByVal start_point As Long, ByVal end_point As Long, ByRef error_code As Integer) As Long
+'MsgBox "target:" & target & "start_point: " & start_point & "end_point: " & end_point
+    Dim list_infix(), list_postfix(), stack_translate(), stack_calc() As Variant
+    Dim prev_char As String
+    Dim count As Long
     
-    Dim number_of_uk
+    Dim number_of_uk As Integer
     number_of_uk = 0
     
     '첫 글자가 아닌 "엌"을 "어ㅋ"로 변환
@@ -847,11 +853,12 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
     
     '연산자와 피연산자를 담을 중위 표기 배열 생성
     ReDim list_infix(2 * count + 10), list_postfix(2 * count + 10), stack_translate(2 * count + 10), stack_calc(2 * count + 10)
-    Dim list_infix_pointer, list_postfix_pointer, stack_translate_pointer, stack_calc_pointer
-    Dim count_for_num, is_minus, successive_minus
-    Dim variable_count, is_called
-    Dim var_end_point
-    Dim has_v3_var, has_v3_var_pos
+    Dim list_infix_pointer, list_postfix_pointer, stack_translate_pointer, stack_calc_pointer As Long
+    Dim count_for_num As Variant
+    Dim successive_minus, variable_count As Long
+    Dim var_end_point As Long
+    Dim has_v3_var_pos As Long
+    Dim is_minus, is_called, has_v3_var As Boolean
     
     has_v3_var = False
     has_v3_var_pos = 0
@@ -1041,7 +1048,7 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
                 End If
             Next
             
-            Dim result
+            Dim result As Long
             result = 0
             
             If (has_v3_var) Then 'v3 형태의 변수가 맨 앞에 있으면
@@ -1132,7 +1139,7 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
         End Select
     Loop
     
-    Dim item
+    Dim item As Variant
     
     '중위 표기를 후위 표기로 변경
     For i = 0 To list_infix_pointer
@@ -1165,7 +1172,7 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
     
     '연산
     For i = 0 To list_postfix_pointer
-        Dim temp_calc
+        Dim temp_calc As Decimal
         temp_calc = 0
         item = list_postfix(i)
         
@@ -1182,39 +1189,42 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
             stack_calc(stack_calc_pointer - 1) = temp_calc
             stack_calc_pointer = stack_calc_pointer - 1
         Else '숫자
-            'item = OverFlow(item) '오버플로 처리
+            item = OverFlow(item) '오버플로 처리
             
             stack_calc_pointer = stack_calc_pointer + 1
             stack_calc(stack_calc_pointer) = item
         End If
     Next
     
-    CalculateNumber = stack_calc(0)
+    CalculateNumber = OverFlow(stack_calc(0)) '오버플로 처리
 End Function
 
-'Function OverFlow(ByVal number) '32비트 정수형 기준으로 처리
-'    Do
-'        For i = 62 To 32 Step -1
-'            If (number > (2 ^ i)) Then '양수 오버플로
-'                number = number - (2 ^ i)
-'            ElseIf (number < -(2 ^ i)) Then '음수 오버플로
-'                number = number + (2 ^ i)
-'            End If
-'        Next
-'        
-'        If (number > 2147483647) Then '양수 오버플로
-'            number = number - 4294967296# '2^32
-'        ElseIf (number < -2147483648#) Then '음수 오버플로
-'            number = number + 4294967296# '2^32
-'        Else
-'            Exit Do
-'        End If
-'    Loop
-'    
-'    OverFlow = number
-'End Function
+Function OverFlow(ByVal number As Variant) As Long '32비트 정수형 기준으로 처리
+    Dim power31 As Variant
+    power31 = 2^31
+    
+    Do
+        For i = 62 To 32 Step -1
+            If (number > (2 ^ i)) Then '양수 오버플로
+                number = number - (2 ^ i)
+            ElseIf (number < -(2 ^ i)) Then '음수 오버플로
+                number = number + (2 ^ i)
+            End If
+        Next
+        
+        If (number > power31 - 1) Then '양수 오버플로
+            number = number - power31 * 2 '2^32
+        ElseIf (number < -1 * power31) Then '음수 오버플로
+            number = number + power31 * 2 '2^32
+        Else
+            Exit Do
+        End If
+    Loop
+    
+    OverFlow = number
+End Function
 
-Function InputNum()
+Function InputNum() As Long
     If (has_input_list) Then
         If Not IsEmpty(Worksheets("변수").Cells(4 + input_to_use, 10)) Then
             InputNum = Worksheets("변수").Cells(4 + input_to_use, 10).Value
@@ -1293,8 +1303,10 @@ Function InputNum()
     
 End Function
 
-Sub PrintToConsole(ByVal Target As String, ByRef error_code As Integer)
-    Dim is_numeral, character, output_num, max_code
+Sub PrintToConsole(ByVal Target As Variant, ByRef error_code As Integer)
+    Dim is_numeral As Boolean
+    Dim character As String
+    Dim output_num, max_code As Long
     is_numeral = True
     character = vbNullString
     output_num = 0
@@ -1348,8 +1360,8 @@ Sub PrintToConsole(ByVal Target As String, ByRef error_code As Integer)
     End If
 End Sub
 
-Function ParseOutput(ByVal Target As String, ByRef is_numeral, ByRef error_code)
-    Dim print_end_point
+Function ParseOutput(ByVal Target As Variant, ByRef is_numeral As Boolean, ByRef error_code As Integer) As Long
+    Dim print_end_point As Long
     is_numeral = True '정수 혹은 문자
     print_end_point = 1
     
@@ -1364,18 +1376,18 @@ Function ParseOutput(ByVal Target As String, ByRef is_numeral, ByRef error_code)
         Exit Function
     End If
     
-    Dim output_num
+    Dim output_num As Long
     output_num = 0
     output_num = CalculateNumber(Target, 2, Len(Target) - 1, error_code)
     
     ParseOutput = output_num
 End Function
 
-Sub RunCalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVal end_point, ByRef error_code, ByRef result)
+Sub RunCalculateNumber(ByVal Target As Variant, ByVal start_point As Long, ByVal end_point As Long, ByRef error_code As Integer, ByRef result As Long)
     result = CalculateNumber(Target, start_point, end_point, error_code)
 End Sub
 
-Function FindVarPos(ByVal index, ByRef error_code)
+Function FindVarPos(ByVal index As Long, ByRef error_code As Integer) As Variant
     If (index > 0) Then
         FindVarPos = Cells(4 + index, 11).Value
     ElseIf (index <= 0) Then
@@ -1383,7 +1395,7 @@ Function FindVarPos(ByVal index, ByRef error_code)
     End If
 End Function
 
-Sub MapVar(ByVal index, ByVal num, ByRef error_code)
+Sub MapVar(ByVal index As Long, ByVal num As Long, ByRef error_code As Integer)
     If (index > 0) Then
         If (index > 1048572) Then
             error_code = -204
