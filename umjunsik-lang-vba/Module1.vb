@@ -1172,7 +1172,7 @@ Function CalculateNumber(ByVal Target As Variant, ByVal start_point As Long, ByV
     
     '연산
     For i = 0 To list_postfix_pointer
-        Dim temp_calc As Decimal
+        Dim temp_calc As Variant
         temp_calc = 0
         item = list_postfix(i)
         
