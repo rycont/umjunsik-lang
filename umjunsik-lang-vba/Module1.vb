@@ -1,9 +1,10 @@
-﻿Public initial_sound_is_allowed, current_command_row, current_console_row, last_command_row
-Public is_running, is_on_console, prev_cell_row, prev_cell_col
-Public return_num
-Public is_debugging, blocking, visual
-Public updated_max_var, updated_min_var
-Public has_input_list, input_to_use '사전에 입력한 입력값에서 아직 사용하지 않은 입력값의 위치
+﻿Public initial_sound_is_allowed, is_running, is_debugging, is_on_console, blocking, visual As Boolean
+Public current_command_row, current_console_row, last_command_row As Long
+Public prev_cell_row, prev_cell_col As Long
+Public updated_max_var, updated_min_var, return_num As Long
+'사전에 입력한 입력값에서 아직 사용하지 않은 입력값의 위치
+Public has_input_list As Boolean
+Public input_to_use As Long
 
 Sub ClearAll()
     Worksheets("실행기").Range("E105:K1048576").ClearContents
@@ -29,10 +30,11 @@ Sub Clear()
     Worksheets("변수").Range("G5:G1000").ClearContents
 End Sub
 
-Sub TransformInputs(ByRef error_code)
+Sub TransformInputs(ByRef error_code As Integer)
     Worksheets("변수").Range("J5:J1000").ClearContents
     
-    Dim Str, prev_pos, line
+    Dim Str As String
+    Dim prev_pos, line As Long
     Str = vbNullString
     prev_pos = 1
     line = 1
@@ -111,7 +113,7 @@ Sub Debug_code()
         
         Call Clear
         
-        Dim error_c
+        Dim error_c As Integer
         error_c = 0
         
         Call TransformInputs(error_c)
@@ -215,13 +217,13 @@ Sub start()
     
     Cells(current_command_row + 4, 4).Select
     '콘솔 입력 부분을 제외한 나머지 명령 처리는 Selection 대신 command 사용
-    Dim command
+    Dim command As String
     command = Selection.Value
     
-    Dim error_code
+    Dim error_code As Integer
     error_code = 0
     
-    Dim count_for_visual
+    Dim count_for_visual As Integer
     count_for_visual = 0
     
     '반환값
@@ -306,8 +308,8 @@ IfCommand:
         command = Trim(command)
         
         '변수 계산
-        Dim variable_count, number, updated_var_row
-        Dim is_called, var_end_point
+        Dim variable_count, number, updated_var_row, var_end_point As Long
+        Dim is_called As Boolean
         is_called = False
         var_end_point = 1
         variable_count = 1
@@ -315,9 +317,10 @@ IfCommand:
         updated_var_row = 0
         
         '콘솔 출력
-        Dim output_char, is_numeral
+        Dim output_char
+        Dim is_numeral As Boolean
         
-        Dim dongtan_end_point
+        Dim dongtan_end_point As Long
         dongtan_end_point = 0
         
         If (Cells(current_command_row + 4, 4).Value = "어떻게") Then '첫 번째 줄
@@ -641,7 +644,7 @@ Continue1:
     Loop
 End Sub
                     
-Sub Delay(ByVal a)
+Sub Delay(ByVal a As Double)
     Dim start
     start = Timer
     
@@ -650,8 +653,8 @@ Sub Delay(ByVal a)
     Loop
 End Sub
 
-Sub ErrorCode(ByVal error_code)
-    Dim contents
+Sub ErrorCode(ByVal error_code As Integer)
+    Dim contents As String
     contents = vbNullString
     
     If (error_code < 0) Then '오류
@@ -683,7 +686,8 @@ Private Function FindEndPoint()
     FindEndPoint = -1
 End Function
 
-Function ParseVariable(ByVal Target, ByVal start_point, ByVal restriction_end_point, ByRef end_point, ByRef is_called, ByRef error_code)
+Function ParseVariable(ByVal Target As String, ByVal start_point As Long, ByVal restriction_end_point As Long, _
+                       ByRef end_point As Long, ByRef is_called As Boolean, ByRef error_code As Integer)
     Dim n_start_point, tmp_end_point, tmp_number, orig_len_of_target, target_is_modified
     Dim is_called_for_v3, is_called_for_v3_last_k '"어" 변수 호출 또는 "어...ㅋ"의 변수 호출인지 확인
     n_start_point = start_point
@@ -806,7 +810,7 @@ Function ParseVariable(ByVal Target, ByVal start_point, ByVal restriction_end_po
     Exit Function
 End Function
 
-Function CalculateNumber(ByVal Target, ByVal start_point, ByVal end_point, ByRef error_code)
+Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVal end_point, ByRef error_code)
     Dim list_infix(), list_postfix(), stack_translate(), stack_calc()
     Dim prev_char, count
     
@@ -1289,7 +1293,7 @@ Function InputNum()
     
 End Function
 
-Sub PrintToConsole(ByVal Target, ByRef error_code)
+Sub PrintToConsole(ByVal Target As String, ByRef error_code As Integer)
     Dim is_numeral, character, output_num, max_code
     is_numeral = True
     character = vbNullString
@@ -1344,7 +1348,7 @@ Sub PrintToConsole(ByVal Target, ByRef error_code)
     End If
 End Sub
 
-Function ParseOutput(ByVal Target, ByRef is_numeral, ByRef error_code)
+Function ParseOutput(ByVal Target As String, ByRef is_numeral, ByRef error_code)
     Dim print_end_point
     is_numeral = True '정수 혹은 문자
     print_end_point = 1
@@ -1367,7 +1371,7 @@ Function ParseOutput(ByVal Target, ByRef is_numeral, ByRef error_code)
     ParseOutput = output_num
 End Function
 
-Sub RunCalculateNumber(ByVal Target, ByVal start_point, ByVal end_point, ByRef error_code, ByRef result)
+Sub RunCalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVal end_point, ByRef error_code, ByRef result)
     result = CalculateNumber(Target, start_point, end_point, error_code)
 End Sub
 
