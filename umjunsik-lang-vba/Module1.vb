@@ -1182,37 +1182,37 @@ Function CalculateNumber(ByVal Target As String, ByVal start_point As Long, ByVa
             stack_calc(stack_calc_pointer - 1) = temp_calc
             stack_calc_pointer = stack_calc_pointer - 1
         Else '숫자
-            item = OverFlow(item) '오버플로 처리
+            'item = OverFlow(item) '오버플로 처리
             
             stack_calc_pointer = stack_calc_pointer + 1
             stack_calc(stack_calc_pointer) = item
         End If
     Next
     
-    CalculateNumber = OverFlow(stack_calc(0)) '오버플로 처리
+    CalculateNumber = stack_calc(0)
 End Function
 
-Function OverFlow(ByVal number) '32비트 정수형 기준으로 처리
-    Do
-        For i = 62 To 32 Step -1
-            If (number > (2 ^ i)) Then '양수 오버플로
-                number = number - (2 ^ i)
-            ElseIf (number < -(2 ^ i)) Then '음수 오버플로
-                number = number + (2 ^ i)
-            End If
-        Next
-        
-        If (number > 2147483647) Then '양수 오버플로
-            number = number - 4294967296# '2^32
-        ElseIf (number < -2147483648#) Then '음수 오버플로
-            number = number + 4294967296# '2^32
-        Else
-            Exit Do
-        End If
-    Loop
-    
-    OverFlow = number
-End Function
+'Function OverFlow(ByVal number) '32비트 정수형 기준으로 처리
+'    Do
+'        For i = 62 To 32 Step -1
+'            If (number > (2 ^ i)) Then '양수 오버플로
+'                number = number - (2 ^ i)
+'            ElseIf (number < -(2 ^ i)) Then '음수 오버플로
+'                number = number + (2 ^ i)
+'            End If
+'        Next
+'        
+'        If (number > 2147483647) Then '양수 오버플로
+'            number = number - 4294967296# '2^32
+'        ElseIf (number < -2147483648#) Then '음수 오버플로
+'            number = number + 4294967296# '2^32
+'        Else
+'            Exit Do
+'        End If
+'    Loop
+'    
+'    OverFlow = number
+'End Function
 
 Function InputNum()
     If (has_input_list) Then
