@@ -1,4 +1,4 @@
-﻿Public initial_sound_is_allowed, is_running, is_debugging, is_on_console, blocking, visual As Boolean
+Public initial_sound_is_allowed, is_running, is_debugging, is_on_console, blocking, visual As Boolean
 Public current_command_row, current_console_row, last_command_row As Long
 Public prev_cell_row, prev_cell_col As Long
 Public updated_max_var, updated_min_var, return_num As Long
@@ -1343,7 +1343,7 @@ Sub PrintToConsole(ByVal Target As Variant, ByRef error_code As Integer)
             error_code = 151 'Warn 151
             Exit Sub
         Else
-            If (output_num >= 32 And output_num <= max_code) Then '범위 이하의 경우(32 미만은 문자 출력용이 아님)
+            If (output_num <= max_code) Then '범위 이하의 경우
                 character = Worksheets("유니코드").Cells(output_num Mod 1000, (output_num \ 1000) * 3 + 3).Value '한셀 호환
             Else
             	character = WorksheetFunction.Unichar(output_num) 'MS Office Excel, LibreOffice Calc 전용
