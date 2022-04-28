@@ -167,6 +167,15 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "pizzaroot",
+      "name": "pizzaroot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17989599?v=4",
+      "profile": "https://github.com/pizzaroot",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
