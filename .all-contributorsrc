@@ -185,6 +185,15 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "PersesTitan",
+      "name": "PersesTitan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97427878?v=4",
+      "profile": "https://github.com/PersesTitan",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
