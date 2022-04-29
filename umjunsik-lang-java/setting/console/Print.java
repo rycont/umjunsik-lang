@@ -11,10 +11,10 @@ public class Print {
 
         line = line.substring(start, end);
         VarGet varGet = new VarGet();
-        if (varGet.check(line)) System.out.print(varGet.get(line));
+        System.out.print(varGet.get(line));
     }
 
     public boolean check(String line) {
-        return line.trim().startsWith("식") || line.endsWith("!");
+        return line.trim().startsWith("식") && line.endsWith("!");
     }
 }
