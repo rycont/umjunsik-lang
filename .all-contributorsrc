@@ -167,6 +167,33 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "pizzaroot",
+      "name": "pizzaroot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17989599?v=4",
+      "profile": "https://github.com/pizzaroot",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "depth221",
+      "name": "Dongha Hwang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22697167?v=4",
+      "profile": "https://luxurycoop.tistory.com/",
+      "contributions": [
+        "example"
+      ]
+    },
+    {
+      "login": "PersesTitan",
+      "name": "PersesTitan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/97427878?v=4",
+      "profile": "https://github.com/PersesTitan",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
