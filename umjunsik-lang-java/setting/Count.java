@@ -19,6 +19,7 @@ public class Count {
                 if (c=='.') ++count;
                 else if (c==',') --count;
             } list.add(count);
+
         }
 
         totalNumber = list.get(0);
