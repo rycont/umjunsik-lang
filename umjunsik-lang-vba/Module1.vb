@@ -1,7 +1,7 @@
-Public initial_sound_is_allowed, is_running, is_debugging, is_on_console, blocking, visual As Boolean
-Public current_command_row, current_console_row, last_command_row As Long
-Public prev_cell_row, prev_cell_col As Long
-Public updated_max_var, updated_min_var, return_num As Long
+Public initial_sound_is_allowed As Boolean, is_running As Boolean, is_debugging As Boolean, is_on_console As Boolean, blocking As Boolean, visual As Boolean
+Public current_command_row As Long, current_console_row As Long, last_command_row As Long
+Public prev_cell_row As Long, prev_cell_col As Long
+Public updated_max_var As Long, updated_min_var As Long, return_num As Long
 '사전에 입력한 입력값에서 아직 사용하지 않은 입력값의 위치
 Public has_input_list As Boolean
 Public input_to_use As Long
@@ -34,7 +34,7 @@ Sub TransformInputs(ByRef error_code As Integer)
     Worksheets("변수").Range("J5:J1000").ClearContents
     
     Dim Str As String
-    Dim prev_pos, line As Long
+    Dim prev_pos As Long, line As Long
     Str = vbNullString
     prev_pos = 1
     line = 1
@@ -150,7 +150,7 @@ Sub Init()
         
         Call Clear
         
-        Dim error_c
+        Dim error_c As Integer
         error_c = 0
         
         Call TransformInputs(error_c)
@@ -309,7 +309,7 @@ IfCommand:
         End If
         
         '변수 계산
-        Dim variable_count, number, updated_var_row, var_end_point As Long
+        Dim variable_count As Long, number As Long, updated_var_row As Long, var_end_point As Long
         Dim is_called As Boolean
         is_called = False
         var_end_point = 1
@@ -692,8 +692,8 @@ End Function
 
 Function ParseVariable(ByVal Target As Variant, ByVal start_point As Long, ByVal restriction_end_point As Long, ByRef end_point As Long, ByRef is_called As Boolean, ByRef error_code As Integer) As Long
 'MsgBox "target:" & target & "start_point: " & start_point & "restriction_end_point: " & restriction_end_point
-    Dim n_start_point, tmp_end_point, tmp_number, orig_len_of_target As Long
-    Dim target_is_modified, is_called_for_v3 As Boolean
+    Dim n_start_point As Long, tmp_end_point As Long, tmp_number As Long, orig_len_of_target As Long
+    Dim target_is_modified As Boolean, is_called_for_v3 As Boolean
     Dim is_called_for_v3_last_k As Long '"어" 변수 호출 또는 "어...ㅋ"의 변수 호출인지 확인
     n_start_point = start_point
     tmp_end_point = start_point
@@ -853,12 +853,12 @@ Function CalculateNumber(ByVal Target As Variant, ByVal start_point As Long, ByV
     
     '연산자와 피연산자를 담을 중위 표기 배열 생성
     ReDim list_infix(2 * count + 10), list_postfix(2 * count + 10), stack_translate(2 * count + 10), stack_calc(2 * count + 10)
-    Dim list_infix_pointer, list_postfix_pointer, stack_translate_pointer, stack_calc_pointer As Long
+    Dim list_infix_pointer As Long, list_postfix_pointer As Long, stack_translate_pointer As Long, stack_calc_pointer As Long
     Dim count_for_num As Variant
-    Dim successive_minus, variable_count As Long
+    Dim successive_minus As Long, variable_count As Long
     Dim var_end_point As Long
     Dim has_v3_var_pos As Long
-    Dim is_minus, is_called, has_v3_var As Boolean
+    Dim is_minus As Boolean, is_called As Boolean, has_v3_var As Boolean
     
     has_v3_var = False
     has_v3_var_pos = 0
@@ -1201,7 +1201,7 @@ End Function
 
 Function OverFlow(ByVal number As Variant) As Long '32비트 정수형 기준으로 처리
     Dim power31 As Variant
-    power31 = 2^31
+    power31 = 2 ^ 31
     
     Do
         For i = 62 To 32 Step -1
@@ -1306,7 +1306,7 @@ End Function
 Sub PrintToConsole(ByVal Target As Variant, ByRef error_code As Integer)
     Dim is_numeral As Boolean
     Dim character As String
-    Dim output_num, max_code As Long
+    Dim output_num As Long, max_code As Long
     is_numeral = True
     character = vbNullString
     output_num = 0
