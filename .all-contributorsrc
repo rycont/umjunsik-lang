@@ -194,6 +194,16 @@
       "contributions": [
         "platform",
         "bug"
+        "platform"
+      ]
+    },
+    {
+      "login": "kongchu2",
+      "name": "JunHyeok Hong",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48686444?v=4",
+      "profile": "http://codeup.kr/userinfo.php?user=qwerty5233",
+      "contributions": [
+        "doc"
       ]
     }
   ],
