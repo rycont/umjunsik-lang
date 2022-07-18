@@ -48,7 +48,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-21-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-22-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -81,6 +81,9 @@
     <td align="center"><a href="https://github.com/pizzaroot"><img src="https://avatars.githubusercontent.com/u/17989599?v=4?s=100" width="100px;" alt=""/><br /><sub><b>pizzaroot</b></sub></a><br /><a href="#platform-pizzaroot" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://luxurycoop.tistory.com/"><img src="https://avatars.githubusercontent.com/u/22697167?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dongha Hwang</b></sub></a><br /><a href="#example-depth221" title="Examples">💡</a></td>
     <td align="center"><a href="https://github.com/PersesTitan"><img src="https://avatars.githubusercontent.com/u/97427878?v=4?s=100" width="100px;" alt=""/><br /><sub><b>PersesTitan</b></sub></a><br /><a href="#platform-PersesTitan" title="Packaging/porting to new platform">📦</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://codeup.kr/userinfo.php?user=qwerty5233"><img src="https://avatars.githubusercontent.com/u/48686444?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JunHyeok Hong</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=kongchu2" title="Documentation">📖</a></td>
   </tr>
 </table>
 
