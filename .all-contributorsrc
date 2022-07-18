@@ -183,7 +183,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/22697167?v=4",
       "profile": "https://luxurycoop.tistory.com/",
       "contributions": [
-        "example"
+        "example",
+        "bug"
       ]
     },
     {
@@ -194,7 +195,6 @@
       "contributions": [
         "platform",
         "bug"
-        "platform"
       ]
     },
     {
