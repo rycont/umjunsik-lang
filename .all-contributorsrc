@@ -205,6 +205,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "happy-spark",
+      "name": "happy-spark",
+      "avatar_url": "https://avatars.githubusercontent.com/u/107300540?v=4",
+      "profile": "https://github.com/happy-spark",
+      "contributions": [
+        "example"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -212,5 +221,6 @@
   "projectOwner": "rycont",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
