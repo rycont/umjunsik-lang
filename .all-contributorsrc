@@ -214,6 +214,15 @@
       "contributions": [
         "example"
       ]
+    },
+    {
+      "login": "kms0219kms",
+      "name": "Minsu Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67222970?v=4",
+      "profile": "https://sskate.me",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
