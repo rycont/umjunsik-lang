@@ -38,7 +38,7 @@
 - [디노 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 레퍼런스 런타임입니다
 - [노드JS (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
 - [파이썬 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
-- [웹-엄 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : ~~PMH님이 [호스팅해주시고 있습니다🎉](https://static.pmh.codes/umjunsik-lang/umjunsik-lang-web/)~~ 현재 접속 불가
+- [웹-엄 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : [kms0219kms](https://github.com/kms0219kms)님이 [호스팅해주시고 있습니다🎉](https://umjunsik-lang.sskate.me/)
 - [C (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C# (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
 - [코틀린 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-kotlin)
