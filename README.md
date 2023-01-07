@@ -48,7 +48,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -86,6 +86,7 @@
     <tr>
       <td align="center"><a href="http://codeup.kr/userinfo.php?user=qwerty5233"><img src="https://avatars.githubusercontent.com/u/48686444?v=4?s=100" width="100px;" alt="JunHyeok Hong"/><br /><sub><b>JunHyeok Hong</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=kongchu2" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/happy-spark"><img src="https://avatars.githubusercontent.com/u/107300540?v=4?s=100" width="100px;" alt="happy-spark"/><br /><sub><b>happy-spark</b></sub></a><br /><a href="#example-happy-spark" title="Examples">💡</a></td>
+      <td align="center"><a href="https://sskate.me"><img src="https://avatars.githubusercontent.com/u/67222970?v=4?s=100" width="100px;" alt="Minsu Kim"/><br /><sub><b>Minsu Kim</b></sub></a><br /><a href="#platform-kms0219kms" title="Packaging/porting to new platform">📦</a></td>
     </tr>
   </tbody>
 </table>
