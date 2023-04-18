@@ -232,6 +232,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Hiyabye",
+      "name": "Jihoon Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50550999?v=4",
+      "profile": "https://github.com/Hiyabye",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
