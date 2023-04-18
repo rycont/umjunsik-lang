@@ -44,7 +44,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -84,6 +84,7 @@
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/happy-spark"><img src="https://avatars.githubusercontent.com/u/107300540?v=4?s=100" width="100px;" alt="happy-spark"/><br /><sub><b>happy-spark</b></sub></a><br /><a href="#example-happy-spark" title="Examples">💡</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://sskate.me"><img src="https://avatars.githubusercontent.com/u/67222970?v=4?s=100" width="100px;" alt="Minsu Kim"/><br /><sub><b>Minsu Kim</b></sub></a><br /><a href="#platform-kms0219kms" title="Packaging/porting to new platform">📦</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.youtube.com/@comgongbro"><img src="https://avatars.githubusercontent.com/u/16649567?v=4?s=100" width="100px;" alt="JerryJung"/><br /><sub><b>JerryJung</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=jerryjungwh" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hiyabye"><img src="https://avatars.githubusercontent.com/u/50550999?v=4?s=100" width="100px;" alt="Jihoon Lee"/><br /><sub><b>Jihoon Lee</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=Hiyabye" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
