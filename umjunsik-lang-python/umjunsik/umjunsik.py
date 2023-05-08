@@ -1,12 +1,16 @@
 import sys
 
-
 class Umjunsik:
     def __init__(self):
         self.data = [0]*256
 
     def toNumber(self, code):
-        return eval('*'.join(list(map(lambda cmd:str((self.data[cmd.count('어')-1] if cmd.count('어') else 0) + cmd.count('.') - cmd.count(',')), code.split(' ')))))
+        tokens = code.split(' ')
+        result = 1
+        for token in tokens:
+            num = (self.data[token.count('어') - 1] if token.count('어') else 0) + token.count('.') - token.count(',')
+            result *= num
+        return result
 
     @staticmethod
     def type(code):
