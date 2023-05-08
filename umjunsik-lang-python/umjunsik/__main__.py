@@ -3,7 +3,7 @@ from .umjunsik import Umjunsik
 
 def main():
     if len(sys.argv) != 2:
-        print("Usage: umjunsik-interpreter <filename.umm>")
+        print("Usage: umjunsik <filename.umm>")
         sys.exit(1)
 
     filename = sys.argv[1]
