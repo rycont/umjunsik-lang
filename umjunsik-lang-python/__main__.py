@@ -7,7 +7,7 @@ def main():
         sys.exit(1)
 
     filename = sys.argv[1]
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filename, "r", encoding="utf-8") as file:
         code = file.read()
 
     interpreter = Umjunsik()
