@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "umjunsik-lang-python=umjunsik-lang-python.__main__:main",
+            "umjunsik=umjunsik-lang-python.__main__:main",
         ],
     },
     author="rycont",
