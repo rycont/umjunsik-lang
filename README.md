@@ -33,6 +33,12 @@
 - 코딩애플: [엄준식 프로그래밍 언어 (어떤 놈이 만들었냐)](https://www.youtube.com/watch?v=G0psQ54f5zE)
 - 컴공선배: [엄랭 어떤 놈이 만들었냐? 어떤 놈 만났습니다.](https://youtu.be/NS56sb6EYIw)
 - 코딩애플: [chatGPT는 엄준식 프로그래밍 언어도 잘할까?](https://www.youtube.com/watch?v=SdDs0ScOFSU)
+
+## 설치
+```bash
+pip install umjunsik
+```
+
 # 구현체
 + [류갓 WebIDE에서 엄랭을 실행할 수 있습니다](https://www.ryugod.com/)
 
