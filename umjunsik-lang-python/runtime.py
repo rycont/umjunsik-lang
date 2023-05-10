@@ -1,5 +1,6 @@
 import sys
 
+
 class Umjunsik:
     def __init__(self):
         self.data = [0]*256
