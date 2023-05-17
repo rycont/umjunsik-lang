@@ -33,12 +33,15 @@
 - 코딩애플: [엄준식 프로그래밍 언어 (어떤 놈이 만들었냐)](https://www.youtube.com/watch?v=G0psQ54f5zE)
 - 컴공선배: [엄랭 어떤 놈이 만들었냐? 어떤 놈 만났습니다.](https://youtu.be/NS56sb6EYIw)
 - 코딩애플: [chatGPT는 엄준식 프로그래밍 언어도 잘할까?](https://www.youtube.com/watch?v=SdDs0ScOFSU)
+
 # 구현체
 + [류갓 WebIDE에서 엄랭을 실행할 수 있습니다](https://www.ryugod.com/)
 
 - [디노 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 레퍼런스 런타임입니다
 - [노드JS (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
 - [파이썬 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
+  - pip에서 `umjunsik` 패키지를 설치할 수 있습니다
+  - `$ pip install umjunsik && umjunsik [filename.umm]`
 - [웹-엄 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : [kms0219kms](https://github.com/kms0219kms)님이 [호스팅해주시고 있습니다🎉](https://umjunsik-lang.sskate.me/)
 - [C (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C# (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
