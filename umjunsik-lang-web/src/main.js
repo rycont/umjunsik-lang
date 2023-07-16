@@ -20,14 +20,16 @@ splabelElem.innerText = '실행 속도: ' + speedElem.value + 'ms당 1스텝';
 runElem.onclick = () => run(codeElem.value, inputElem.value);
 stopElem.onclick = () => STOP = true;
 clearElem.onclick = () => {
-	outputElem.value = '';
 	dumpsElem.value = '';
+	outputElem.value = '';
+	outputElem.style.borderColor = '';
 };
 resetElem.onclick = () => {
 	codeElem.value = '';
+	dumpsElem.value = '';
 	inputElem.value = '';
 	outputElem.value = '';
-	dumpsElem.value = '';
+	outputElem.style.borderColor = '';
 };
 speedElem.oninput = () => splabelElem.innerText = '실행 속도: ' + speedElem.value + 'ms당 1스텝';
 
