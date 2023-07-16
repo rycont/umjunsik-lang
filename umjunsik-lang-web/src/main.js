@@ -23,7 +23,12 @@ clearElem.onclick = () => {
 	outputElem.value = '';
 	dumpsElem.value = '';
 };
-resetElem.onclick = () => codeElem.value = '';
+resetElem.onclick = () => {
+	codeElem.value = '';
+	inputElem.value = '';
+	outputElem.value = '';
+	dumpsElem.value = '';
+};
 speedElem.oninput = () => splabelElem.innerText = '실행 속도: ' + speedElem.value + 'ms당 1스텝';
 
 function run(code, input) {
