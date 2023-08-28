@@ -224,6 +224,24 @@
         "platform",
         "design"
       ]
+    },
+    {
+      "login": "jerryjungwh",
+      "name": "JerryJung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16649567?v=4",
+      "profile": "https://www.youtube.com/@comgongbro",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Hiyabye",
+      "name": "Jihoon Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50550999?v=4",
+      "profile": "https://github.com/Hiyabye",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

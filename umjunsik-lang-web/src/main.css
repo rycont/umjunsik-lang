@@ -1,0 +1,11 @@
+:root {
+    --spacing: 0.2rem;
+}
+
+td {
+    border: 0;
+}
+
+.container {
+    padding: 30px 0;
+}

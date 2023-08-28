@@ -1,12 +1,11 @@
-### 백준에서 엄랭을 만나보세요!
+# 엄랭
 
-[백준 설정](https://www.acmicpc.net/setting/language)에서 "엄준식"을 활성화해주면 엄랭으로 문제를 풀 수 있습니다
+엄랭은 세계 최초의 인물이름으로 만들어진 난해한 프로그래밍 언어입니다. 엄준식이 어떻게 인물 이름이냐고요? 그러게요ㅋㅋ 어떻게 엄준식이 어떻게 사람 이름이지ㅋㅋ "엄준식 사람이름인데요"
 
 > 어디선가 유입이 자꾸 들어오고 있는것같은데.. 혹시 시간 되신다면 어디쪽 링크 통해서 들어오셨는지 기재 부탁드리겠습니다. [어떻게 엄랭을 발견하셨나요..!](https://github.com/rycont/umjunsik-lang/issues/1)
 
 ![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/rycont/umjunsik-lang)
 
-# 엄랭
 
 ```
 어떻게
@@ -30,7 +29,10 @@
 **주의: Umlang 표기는 위의 프로젝트와 겹치기 때문에, 꼭 한글로만 표기해주세요.**
 영문표기를 해야할때는 "umjunsik-lang"이라고 표기해주세요.
 
-엄랭은 세계 최초의 인물이름으로 만들어진 난해한 프로그래밍 언어입니다. 엄준식이 어떻게 인물 이름이냐고요? 그러게요ㅋㅋ 어떻게 엄준식이 어떻게 사람 이름이지ㅋㅋ "엄준식 사람이름인데요"
+## 엄 on Live!
+- 코딩애플: [엄준식 프로그래밍 언어 (어떤 놈이 만들었냐)](https://www.youtube.com/watch?v=G0psQ54f5zE)
+- 컴공선배: [엄랭 어떤 놈이 만들었냐? 어떤 놈 만났습니다.](https://youtu.be/NS56sb6EYIw)
+- 코딩애플: [chatGPT는 엄준식 프로그래밍 언어도 잘할까?](https://www.youtube.com/watch?v=SdDs0ScOFSU)
 
 # 구현체
 + [류갓 WebIDE에서 엄랭을 실행할 수 있습니다](https://www.ryugod.com/)
@@ -38,6 +40,8 @@
 - [디노 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-deno) : 레퍼런스 런타임입니다
 - [노드JS (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-node) : Deno 구현체의 NodeJS 포트버전입니다.
 - [파이썬 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-python)
+  - pip에서 `umjunsik` 패키지를 설치할 수 있습니다
+  - `$ pip install umjunsik && umjunsik [filename.umm]`
 - [웹-엄 (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-web) : [kms0219kms](https://github.com/kms0219kms)님이 [호스팅해주시고 있습니다🎉](https://umjunsik-lang.sskate.me/)
 - [C (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-cc)
 - [C# (v2)](https://github.com/rycont/umjunsik-lang/tree/master/umjunsik-lang-csharp)
@@ -48,7 +52,7 @@
 
 # Contributors ✨
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -87,6 +91,8 @@
       <td align="center" valign="top" width="14.28%"><a href="http://codeup.kr/userinfo.php?user=qwerty5233"><img src="https://avatars.githubusercontent.com/u/48686444?v=4?s=100" width="100px;" alt="JunHyeok Hong"/><br /><sub><b>JunHyeok Hong</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=kongchu2" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/happy-spark"><img src="https://avatars.githubusercontent.com/u/107300540?v=4?s=100" width="100px;" alt="happy-spark"/><br /><sub><b>happy-spark</b></sub></a><br /><a href="#example-happy-spark" title="Examples">💡</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://sskate.me"><img src="https://avatars.githubusercontent.com/u/67222970?v=4?s=100" width="100px;" alt="Minsu Kim"/><br /><sub><b>Minsu Kim</b></sub></a><br /><a href="#platform-kms0219kms" title="Packaging/porting to new platform">📦</a> <a href="#design-kms0219kms" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.youtube.com/@comgongbro"><img src="https://avatars.githubusercontent.com/u/16649567?v=4?s=100" width="100px;" alt="JerryJung"/><br /><sub><b>JerryJung</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=jerryjungwh" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hiyabye"><img src="https://avatars.githubusercontent.com/u/50550999?v=4?s=100" width="100px;" alt="Jihoon Lee"/><br /><sub><b>Jihoon Lee</b></sub></a><br /><a href="https://github.com/rycont/umjunsik-lang/commits?author=Hiyabye" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
@@ -103,7 +109,7 @@
 
 ## 자료형
 
-정수: 온점, 반점의 갯수로 나타냅니다. 온점의 갯수만큼 1을 더하며, 반점의 갯수만큼 1을 뺍니다다.
+정수: 온점, 반점의 갯수로 나타냅니다. 온점의 갯수만큼 1을 더하며, 반점의 갯수만큼 1을 뺍니다.
 
 ```
 ... => 3
