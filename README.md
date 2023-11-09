@@ -30,9 +30,9 @@
 영문표기를 해야할때는 "umjunsik-lang"이라고 표기해주세요.
 
 ## 엄 on Live!
-- 코딩애플: [엄준식 프로그래밍 언어 (어떤 놈이 만들었냐)](https://www.youtube.com/watch?v=G0psQ54f5zE)
-- 컴공선배: [엄랭 어떤 놈이 만들었냐? 어떤 놈 만났습니다.](https://youtu.be/NS56sb6EYIw)
-- 코딩애플: [chatGPT는 엄준식 프로그래밍 언어도 잘할까?](https://www.youtube.com/watch?v=SdDs0ScOFSU)
+- 코딩애플: [엄준식 프로그래밍 언어 (어떤 놈이 만들었냐)](https://www.youtube.com/watch?v=G0psQ54f5zE) (07:18)
+- 컴공선배: [엄랭 어떤 놈이 만들었냐? 어떤 놈 만났습니다.](https://youtu.be/NS56sb6EYIw) (17:55)
+- 코딩애플: [chatGPT는 엄준식 프로그래밍 언어도 잘할까?](https://www.youtube.com/watch?v=SdDs0ScOFSU) (01:30)
 
 # 구현체
 + [류갓 WebIDE에서 엄랭을 실행할 수 있습니다](https://www.ryugod.com/)
